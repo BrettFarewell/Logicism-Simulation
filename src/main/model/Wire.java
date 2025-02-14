@@ -9,8 +9,13 @@ public class Wire {
 
     }
 
-    // EFFECT: set power status to "on" and returns true
-    public boolean output() {
+    // EFFECT: set power status to "on"
+    public void input() {
+        // STUB
+    }
+
+    // return power status of wire
+    public boolean getPowerStatus() {
         return false; // STUB
     }
 
