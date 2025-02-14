@@ -2,7 +2,7 @@ package model;
 
 // Represents a power sourse where power will start from. Will contain x and y positions
 public class PowerSource {
-    private final boolean POWER_STATUS = true;
+    private static final boolean POWER_STATUS = true;
     
     // creates a power source where power will start from, sets x and y positions
     public PowerSource(int x, int y) {
