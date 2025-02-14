@@ -11,24 +11,28 @@ public class ObjectPlacer {
         // STUB
     }
 
+    // MODIFIES: this
     // EFFECT: move object selector right 1 charcter if x position < 50 (+1 to x position).
     //         If x position = 50, do nothing
     public void moveRight() {
         // STUB
     }
 
+    // MODIFIES: this
     // EFFECT: move object selector left 1 charcter if x position > 0 (-1 to x position).
     //         If x position = 0, do nothing
     public void moveLeft() {
         // STUB
     }
 
+    // MODIFIES: this
     // EFFECT: move object selector up 1 charcter if x position < 20 (+1 to y position).
     //         If x position = 20, do nothing
     public void moveUp() {
         // STUB
     }
 
+    // MODIFIES: this
     // EFFECT: move object selector down 1 charcter if x position > 0 (-1 to y position).
     //         If x position = 0, do nothing
     public void moveDown() {
