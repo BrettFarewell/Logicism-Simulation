@@ -11,6 +11,8 @@ public interface LogicGate {
     //                   remains unpowered if bottom input is unpowered
     boolean input(String dir);
 
-    // EFFECTS: checks to see if inputs match required logic of specified gate, if so returns true
+    // MODIFIES: this
+    // EFFECTS: checks to see if inputs match required logic of specified gate,
+    //          if so change output to "on" and return true
     boolean output();
 }

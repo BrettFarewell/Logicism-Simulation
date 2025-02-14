@@ -16,7 +16,8 @@ public class OrGate implements LogicGate {
         return false; // STUB
     }
 
-    // EFFECTS: if both left and/or bottom inputs are "on", return true
+    // MODIFIES: this
+    // EFFECTS: if both left and/or bottom inputs are "on", change output to "on" and return true
     @Override
     public boolean output() {
         return false; // STUB
