@@ -68,4 +68,14 @@ public class Scenario {
     public List<OutputElement> getOutputElements() {
         return null; // STUB
     }
+
+    // return SCREEN_WIDTH
+    public int getScreenWidth() {
+        return -1; // STUB
+    }
+
+    // return SCREEN_HEIGHT
+    public int getScreenHeight() {
+        return -1; // STUB
+    }
 }
