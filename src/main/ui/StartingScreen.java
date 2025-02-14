@@ -37,8 +37,8 @@ public class StartingScreen {
     }
 
     // EFFECTS: pull from list of scenarios and allow users to select a scenario
-    public void scenarioSelector() {
-        // STUB
+    public Scenario scenarioSelector() {
+        return null; // STUB
     }
 
     // EFFECTS: displays user options in the scenario selector in the terminal
