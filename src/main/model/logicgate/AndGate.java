@@ -13,17 +13,17 @@ public class AndGate implements LogicGate {
     // MODIFIES: this
     // EFFECTS: takes input direct, if direction is "left", switch left input to "on"
     //                              if direction is "bot", switch bottom input to "on"
-    //                              call output() and if true then change output value to "off"
+    //                              call output() to see if output value changes
     @Override
     public void input(String dir) {
         // STUB
     }
 
     // MODIFIES: this
-    // EFFECTS: if both left and bottom inputs are "on", change output to "on" and return true
+    // EFFECTS: if both left and bottom inputs are "on", change output to "on"
     @Override
-    public boolean output() {
-        return false; // STUB
+    public void output() {
+        // STUB
     }
 
     // EFFECTS: gets x position
@@ -41,6 +41,26 @@ public class AndGate implements LogicGate {
     // return output value of AND gate
     public boolean getOutput() {
         return false; // STUB
+    }
+
+    // set left input value of OR gate to "on", for testing purposes
+    public void setLeftInputOn() {
+        // STUB
+    }
+
+     // set bottom input value of OR gate to "on", for testing purposes
+     public void setBottomInputOn() {
+        // STUB
+    }
+
+    // set left input value of OR gate to "off", for testing purposes
+    public void setLeftInputOff() {
+        // STUB
+    }
+
+     // set bottom input value of OR gate to "off", for testing purposes
+     public void setBottomInputOff() {
+        // STUB
     }
 
     // return left input value of AND gate, for testing purposes
