@@ -15,4 +15,16 @@ public class AndGate extends LogicElement {
     public void checkPowerStatus() {
         // STUB
     }
+
+    // EFFECTS: takes input from right and does nothing
+    @Override
+    public void inputRight() {
+        // STUB
+    }
+
+    // EFFECTS: takes input from above and does nothing
+    @Override
+    public void inputAbove() {
+        // STUB
+    }
 }
