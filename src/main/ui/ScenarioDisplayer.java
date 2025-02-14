@@ -25,8 +25,8 @@ public class ScenarioDisplayer {
         // STUB
     }
 
-    // EFFECTS: builds scenario in terminal
-    public void scenarioTerminalBuilder() {
+    // EFFECTS: renders scenario in terminal
+    public void scenarioRender() {
 
     }
 
