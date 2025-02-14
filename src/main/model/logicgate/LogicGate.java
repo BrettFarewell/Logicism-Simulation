@@ -1,5 +1,7 @@
 package model.logicgate;
 
+
+// Represents a logic gate interface that will be used to provide needed methods for all logic gates
 public interface LogicGate {
     
     // MODIFIES: this
