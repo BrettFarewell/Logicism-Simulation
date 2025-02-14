@@ -43,23 +43,13 @@ public class AndGate implements LogicGate {
         return false; // STUB
     }
 
-    // set left input value of OR gate to "on", for testing purposes
-    public void setLeftInputOn() {
+    // set left input value of AND gate to boolean b, for testing purposes
+    public void setLeftInputOn(boolean b) {
         // STUB
     }
 
-     // set bottom input value of OR gate to "on", for testing purposes
+     // set bottom input value of AND gate to boolean b, for testing purposes
      public void setBottomInputOn() {
-        // STUB
-    }
-
-    // set left input value of OR gate to "off", for testing purposes
-    public void setLeftInputOff() {
-        // STUB
-    }
-
-     // set bottom input value of OR gate to "off", for testing purposes
-     public void setBottomInputOff() {
         // STUB
     }
 
