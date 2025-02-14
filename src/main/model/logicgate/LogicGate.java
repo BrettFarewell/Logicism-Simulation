@@ -17,8 +17,8 @@ public interface LogicGate {
 
     // MODIFIES: this
     // EFFECTS: checks to see if inputs match required logic of specified gate,
-    //          if so change output to "on" and return true
-    boolean output();
+    //          if so change output to "on"
+    void output();
 
     // EFFECTS: gets x position
     int getPosX();
