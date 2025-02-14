@@ -3,6 +3,7 @@ package model.logicgate;
 // Respresents the OR Gate logic gate that has a left and a bottom input, an x and an y position, and a right output
 public class OrGate implements LogicGate {
 
+    // REQUIRES: 0 <= x <= 50 and 0 <= y <= 20
     // EFFECTS: creates OR Gate, with left and botton input values set to "off" and x and y positions to given x and y
     //          parameters
     public OrGate(int x, int y) {
@@ -23,5 +24,17 @@ public class OrGate implements LogicGate {
     @Override
     public boolean output() {
         return false; // STUB
+    }
+
+    // EFFECTS: gets x position
+    @Override
+    public int getPosX() {
+        return -1;
+    }
+
+    // EFFECTS: gets y position
+    @Override
+    public int getPosY() {
+        return -1;
     }
 }
