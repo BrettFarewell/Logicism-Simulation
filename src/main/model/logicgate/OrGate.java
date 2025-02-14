@@ -2,8 +2,9 @@ package model.logicgate;
 
 public class OrGate implements LogicGate {
 
-    // EFFECTS: creates OR Gate, with left and botton input values set to "off"
-    public OrGate() {
+    // EFFECTS: creates OR Gate, with left and botton input values set to "off" and x and y positions to given x and y
+    //          parameters
+    public OrGate(int x, int y) {
         // STUB
     }
     

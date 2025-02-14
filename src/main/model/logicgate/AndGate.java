@@ -2,8 +2,9 @@ package model.logicgate;
 
 public class AndGate implements LogicGate {
 
-    // EFFECTS: creates AND Gate, with left and botton input values set to "off"
-    public AndGate() {
+    // EFFECTS: creates AND Gate, with left and botton input values set to "off" and x and y positions to given x and y
+    //          parameters
+    public AndGate(int x, int y) {
         // STUB
     }
     
