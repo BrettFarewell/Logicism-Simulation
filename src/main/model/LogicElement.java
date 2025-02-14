@@ -6,7 +6,7 @@ package model;
 // as getters and setters for x and y positions in scenario. All logic elements will contain fields of logic elements
 // that are to above, below, right, and left of it in the scenario
 public abstract class LogicElement {
-    
+
     // MODIFIES: this
     // EFFECTS: set the logic element that is to the left
     public void setLeftElement() {
@@ -52,42 +52,42 @@ public abstract class LogicElement {
     }
 
     // MODIFIES: this
-    // EFFECTS: if output is "off", set the left input to be powered "on" and call isOutputTrue().
-    //          if output is "on", do nothing (prevents propagation of already powered on elements)
+    // EFFECTS: if power status is "off", set the left input to be powered "on" and call isOutputTrue().
+    //          if power status is "on", do nothing (prevents propagation of already powered on elements)
     public void inputLeft() {
         // STUB
     }
 
     // MODIFIES: this
-    // EFFECTS: if output is "off", set the right input to be powered "on" and call isOutputTrue()
-    //          if output is "on", do nothing (prevents propagation of already powered on elements)
+    // EFFECTS: if power status is "off", set the right input to be powered "on" and call isOutputTrue()
+    //          if power status is "on", do nothing (prevents propagation of already powered on elements)
     public void inputRight() {
         // STUB
     }
 
     // MODIFIES: this
-    // EFFECTS: if output is "off", set the above input to be powered "on" and call isOutputTrue()
-    //          if output is "on", do nothing (prevents propagation of already powered on elements)
+    // EFFECTS: if power status is "off", set the above input to be powered "on" and call isOutputTrue()
+    //          if power status is "on", do nothing (prevents propagation of already powered on elements)
     public void inputAbove() {
         // STUB
     }
 
     // MODIFIES: this
-    // EFFECTS: if output is "off", set the below input to be powered "on" and call isOutputTrue()
-    //          if output is "on", do nothing (prevents propagation of already powered on elements)
+    // EFFECTS: if power status is "off", set the below input to be powered "on" and call isOutputTrue()
+    //          if power status is "on", do nothing (prevents propagation of already powered on elements)
     public void inputBelow() {
         // STUB
     }
 
     // MODIFIES: this
-    // EFFECTS: check to see what inputs are "on" and match the required logic to turn output "on". Then call
+    // EFFECTS: check to see what inputs are "on" and match the required logic to turn power status "on". Then call
     //          required output directions (outputLeft(), outputRight(), etc.) for the logic element type
     //          Example: AND Gate has left and bottom input and right output, if both inputs are "on",
-    //                   turns output "on" and call outputRight()
-    abstract void isOutputTrue();
+    //                   turns power status "on" and call outputRight()
+    abstract void checkPowerStatus();
 
-    // return output value of logic gate
-    public boolean getOutput() {
+    // return power status value of logic gate
+    public boolean getPowerStatus() {
         return false;// STUB
     }
 
