@@ -4,7 +4,8 @@ package model;
 // and an x and an y position.
 public class AndGate extends LogicElement {
 
-    // Creates an AND Gate at given x and y coordinates, and set logic elements to the left, right, above and below
+    // EFFECTS: Creates an AND Gate at given x and y coordinates, with power status "off"
+    //          and set logic elements to the left, right, above and below
     public AndGate(int x, int y, LogicElement left, LogicElement right, LogicElement above, LogicElement below) {
         // STUB
     }
