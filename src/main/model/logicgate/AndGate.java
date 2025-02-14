@@ -49,7 +49,7 @@ public class AndGate implements LogicGate {
     }
 
      // set bottom input value of AND gate to boolean b, for testing purposes
-     public void setBottomInputOn() {
+     public void setBottomInputOn(boolean b) {
         // STUB
     }
 

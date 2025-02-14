@@ -49,7 +49,7 @@ public class OrGate implements LogicGate {
     }
 
      // set bottom input value of OR gate to boolean b, for testing purposes
-     public void setBottomInputOn() {
+     public void setBottomInputOn(boolean b) {
         // STUB
     }
 
