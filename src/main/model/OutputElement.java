@@ -10,9 +10,19 @@ public class OutputElement {
     }
 
     // MODIFIES: this
-    // EFFECTS: set power status to "on" and returns true
-    boolean output() {
-        return false;
+    // EFFECTS: set power status to "on"
+    public void output() {
+        // STUB
+    }
+
+    // return power status of output element
+    public boolean getPowerStatus() {
+        return false; // STUB
+    }
+
+    // return output ype of output element
+    public String getType() {
+        return ""; // STUB
     }
 
     // EFFECTS: gets x position
