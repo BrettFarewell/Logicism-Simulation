@@ -6,13 +6,13 @@ package model;
 public class ObjectPlacer {
     
     // EFFECT: creates a object placer that specifies what x and y position to place a specified object. Object placer
-    //         will begin at x = 0 and y = 0 position
-    public ObjectPlacer() {
+    //         will begin at x = 0 and y = 0 position and be given a scenario for its width and height
+    public ObjectPlacer(Scenario scenario) {
         // STUB
     }
 
     // MODIFIES: this
-    // EFFECT: move object selector right 1 charcter if x position < 50 (+1 to x position).
+    // EFFECT: move object selector right 1 charcter if x position < scenario width (+1 to x position).
     //         If x position = 50, do nothing
     public void moveRight() {
         // STUB
@@ -26,15 +26,15 @@ public class ObjectPlacer {
     }
 
     // MODIFIES: this
-    // EFFECT: move object selector up 1 charcter if x position < 20 (+1 to y position).
-    //         If x position = 20, do nothing
+    // EFFECT: move object selector up 1 charcter if y position < scenario height (+1 to y position).
+    //         If y position = 20, do nothing
     public void moveUp() {
         // STUB
     }
 
     // MODIFIES: this
-    // EFFECT: move object selector down 1 charcter if x position > 0 (-1 to y position).
-    //         If x position = 0, do nothing
+    // EFFECT: move object selector down 1 charcter if y position > 0 (-1 to y position).
+    //         If y position = 0, do nothing
     public void moveDown() {
         // STUB
     }
