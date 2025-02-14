@@ -5,7 +5,7 @@ package model;
 public class Wire extends LogicElement {
     
     // EFFECTS: creates a wire with power status set to "off" and x and y positions set to given x and y values
-    //          and sets logic elements to the left, right, above and below
+    //          and sets logic elements to the left, right, above and below. Also all inputs to "off"
     public Wire(int x, int y, LogicElement left, LogicElement right, LogicElement above, LogicElement below) {
         // STUB
     }
