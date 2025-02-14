@@ -4,7 +4,7 @@ package model.logicgate;
 public class AndGate implements LogicGate {
 
     // REQUIRES: 0 <= x <= 50 and 0 <= y <= 20
-    // EFFECTS: creates AND Gate, with left and botton input values set to "off" and x and y positions to given x and y
+    // EFFECTS: creates AND Gate, with left and bottom input values set to "off" and x and y positions to given x and y
     //          parameters
     public AndGate(int x, int y) {
         // STUB
