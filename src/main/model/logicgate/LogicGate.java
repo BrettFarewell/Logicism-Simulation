@@ -25,4 +25,7 @@ public interface LogicGate {
 
     // EFFECTS: gets y position
     int getPosY();
+
+    // return output value of logic gate
+    public boolean getOutput();
 }
