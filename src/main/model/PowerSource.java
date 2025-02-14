@@ -10,7 +10,7 @@ public class PowerSource {
     }
 
     // EFFECTS: returns POWER_STATUS
-    public boolean output() {
+    public boolean getPowerStatus() {
         return false; // STUB
     }
     
