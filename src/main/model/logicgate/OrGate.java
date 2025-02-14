@@ -29,12 +29,12 @@ public class OrGate implements LogicGate {
     // EFFECTS: gets x position
     @Override
     public int getPosX() {
-        return -1;
+        return -1; // STUB
     }
 
     // EFFECTS: gets y position
     @Override
     public int getPosY() {
-        return -1;
+        return -1; // STUB
     }
 }
