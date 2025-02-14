@@ -10,6 +10,7 @@ public class AndGate implements LogicGate {
         // STUB
     }
     
+    // REQUIRES: this.output == false
     // MODIFIES: this
     // EFFECTS: takes input direct, if direction is "left", switch left input to "on"
     //                              if direction is "bot", switch bottom input to "on"
