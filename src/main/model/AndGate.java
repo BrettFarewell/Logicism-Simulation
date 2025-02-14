@@ -7,6 +7,6 @@ public class AndGate extends LogicElement {
     // MODIFIES: this
     // EFFECTS: checks to see if left and bottom inputs are "on", if so turns power status "on" and calls outputRight()
     public void checkPowerStatus() {
-        // STUIB
+        // STUB
     }
 }
