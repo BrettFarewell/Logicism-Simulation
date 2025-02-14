@@ -1,5 +1,6 @@
 package model.logicgate;
 
+// Respresents the AND Gate logic gate that has a left and a bottom input, an x and an y position, and a right output
 public class AndGate implements LogicGate {
 
     // EFFECTS: creates AND Gate, with left and botton input values set to "off" and x and y positions to given x and y
