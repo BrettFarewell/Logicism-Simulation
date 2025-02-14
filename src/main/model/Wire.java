@@ -9,8 +9,18 @@ public class Wire {
 
     }
 
-    // EFFECT: set power status to "on" and return true
+    // EFFECT: set power status to "on" and returns true
     public boolean output() {
         return false; // STUB
+    }
+
+    // EFFECTS: gets x position
+    public int getPosX() {
+        return -1; // STUB
+    }
+
+    // EFFECTS: gets y position
+    public int getPosY() {
+        return -1; // STUB
     }
 }
