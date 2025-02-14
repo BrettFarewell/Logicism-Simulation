@@ -42,4 +42,14 @@ public class OrGate implements LogicGate {
     public boolean getOutput() {
         return false; // STUB
     }
+
+     // return left input value of OR gate, for testing purposes
+     public boolean getLeftInput() {
+        return false; // STUB
+    }
+
+     // return bottom input value of OR gate, for testing purposes
+     public boolean getBottomInput() {
+        return false; // STUB
+    }
 }
