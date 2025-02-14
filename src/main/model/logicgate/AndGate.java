@@ -13,10 +13,10 @@ public class AndGate implements LogicGate {
     // MODIFIES: this
     // EFFECTS: takes input direct, if direction is "left", switch left input to "on"
     //                              if direction is "bot", switch bottom input to "on"
-    //                              return result of output()
+    //                              call output() and if true then change output value to "off"
     @Override
-    public boolean input(String dir) {
-        return false; // STUB
+    public void input(String dir) {
+        // STUB
     }
 
     // MODIFIES: this

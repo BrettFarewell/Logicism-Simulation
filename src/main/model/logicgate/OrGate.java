@@ -4,8 +4,8 @@ package model.logicgate;
 public class OrGate implements LogicGate {
 
     // REQUIRES: 0 <= x <= 50 and 0 <= y <= 20
-    // EFFECTS: creates OR Gate, with left and botton input values set to "off" and x and y positions to given x and y
-    //          parameters
+    // EFFECTS: creates OR Gate, with left and bottom input values and output value set to "off" and x and y positions
+    //          to given x and y parameters
     public OrGate(int x, int y) {
         // STUB
     }
@@ -13,10 +13,10 @@ public class OrGate implements LogicGate {
     // MODIFIES: this
     // EFFECTS: takes input direct, if direction is "left", switch left input to "on"
     //                              if direction is "bot", switch bottom input to "on"
-    //                              return result of output()
+    //                              call output() and if true then change output value to "off"
     @Override
-    public boolean input(String dir) {
-        return false; // STUB
+    public void input(String dir) {
+        // STUB
     }
 
     // MODIFIES: this
