@@ -8,12 +8,12 @@ public interface LogicGate {
     
     // MODIFIES: this
     // EFFECTS: takes input of direction of where power is being supplied and changes output status where necessary.
-    //          Returns boolean based on output()
+    //          Call output() and if true, then change output value to "on"
     //          Example: for an OR Gate, if power is supplied to left/bottom, left/bottom input becomes powered and
     //                   output becomes powered
     //          Example: for an AND gate, if power is supplied to left, left input becomes powered but output
     //                   remains unpowered if bottom input is unpowered
-    boolean input(String dir);
+    void input(String dir);
 
     // MODIFIES: this
     // EFFECTS: checks to see if inputs match required logic of specified gate,
