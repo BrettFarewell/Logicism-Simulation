@@ -37,4 +37,9 @@ public class AndGate implements LogicGate {
     public int getPosY() {
         return -1; // STUB
     }
+
+    // return output value of AND gate
+    public boolean getOutput() {
+        return false; // STUB
+    }
 }

@@ -37,4 +37,9 @@ public class OrGate implements LogicGate {
     public int getPosY() {
         return -1; // STUB
     }
+
+    // return output value of OR gate
+    public boolean getOutput() {
+        return false; // STUB
+    }
 }
