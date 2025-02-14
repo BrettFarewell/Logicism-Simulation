@@ -6,6 +6,9 @@ import model.logicgate.*;
 import java.util.List;
 import java.util.ArrayList;
 
+
+// Represents the terminal or ui of the selected scenario, where users will create and place logic objects.
+// Logic objects will be rendered accordingly
 public class ScenarioDisplayer {
     
     // EFFECT: displays scenario given in terminal
@@ -27,6 +30,26 @@ public class ScenarioDisplayer {
 
     // EFFECTS: renders scenario in terminal
     public void scenarioRender() {
+
+    }
+
+    // EFFECTS: renders logic gate in terminal
+    public void logicGateRender()  {
+
+    }
+
+    // EFFECTS: renders wire in terminal
+    public void wireRender()  {
+
+    }
+
+    // EFFECTS: renders power source in terminal
+    public void sourceRender()  {
+
+    }
+
+    // EFFECTS: renders output in terminal
+    public void outputRender()  {
 
     }
 

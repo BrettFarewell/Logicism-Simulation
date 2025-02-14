@@ -5,7 +5,7 @@ import model.Scenario;
 import java.util.List;
 import java.util.ArrayList;
 
-// Represents the terminal or ui of the application, where users will create scenarios and build logic circuits
+// Represents the terminal or ui of the starting screen, where users will create and select scenarios
 public class StartingScreen {
     
     // EFFECTS: initializes the terminal starting screen, sets the application state,
