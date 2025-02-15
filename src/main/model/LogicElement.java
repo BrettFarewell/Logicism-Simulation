@@ -7,6 +7,18 @@ package model;
 // that are to above, below, right, and left of it in the scenario
 public abstract class LogicElement {
 
+    private int PosX;
+    private int PosY;
+    private LogicElement elementLeft;
+    private LogicElement elementRight;
+    private LogicElement elementAbove;
+    private LogicElement elementBelow;
+    private boolean inputLeftStatus;
+    private boolean inputRightStatus;
+    private boolean inputAboveStatus;
+    private boolean inputBelowStatus;
+    private boolean powerStatus;
+
     // MODIFIES: this
     // EFFECTS: set the logic element that is to the left
     public void setLeftElement(LogicElement logicElement) {
@@ -92,25 +104,26 @@ public abstract class LogicElement {
     }
 
     // MODIFIES: this
-    // EFFECTS: propogate powered "on" status output to element to the left
+    // EFFECTS: propogate powered "on" status output to element to the left unless null
     public void outputLeft() {
         // STUB
     }
 
     // MODIFIES: this
-    // EFFECTS: propogate powered "on" status output to element to the right
+    // EFFECTS: propogate powered "on" status output to element to the right unless null
+    //          (call above element's inputbelow())
     public void outputRight() {
         // STUB
     }
 
     // MODIFIES: this
-    // EFFECTS: propogate powered "on" status output to element to the above
+    // EFFECTS: propogate powered "on" status output to element to the above unless null
     public void outputAbove() {
         // STUB
     }
 
     // MODIFIES: this
-    // EFFECTS: propogate powered "on" status output to element to the below
+    // EFFECTS: propogate powered "on" status output to element to the below unless null
     public void outputBelow() {
         // STUB
     }
