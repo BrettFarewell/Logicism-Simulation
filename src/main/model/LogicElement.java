@@ -22,73 +22,85 @@ public abstract class LogicElement {
     // MODIFIES: this
     // EFFECTS: set the logic element that is to the left
     public void setLeftElement(LogicElement logicElement) {
-        // STUB
+        this.elementLeft = logicElement;
     }
 
     // MODIFIES: this
     // EFFECTS: set the logic element that is to the right
     public void setRightElement(LogicElement logicElement) {
-        // STUB
+        this.elementRight = logicElement;
     }
 
     // MODIFIES: this
     // EFFECTS: set the logic element that is above
     public void setAboveElement(LogicElement logicElement) {
-        // STUB
+        this.elementAbove = logicElement;
     }
 
     // MODIFIES: this
     // EFFECTS: set the logic element that is below
     public void setBelowElement(LogicElement logicElement) {
-        // STUB
+        this.elementBelow = logicElement;
     }
 
     // EFFECTS: get the logic element that is to the left
     public LogicElement getLeftElement() {
-        return null; // STUB
+        return this.elementLeft; // STUB
     }
 
     // EFFECTS: get the logic element that is to the right
     public LogicElement getRightElement() {
-        return null; // STUB
+        return this.elementRight; // STUB
     }
 
     // EFFECTS: get the logic element that is above
     public LogicElement getAboveElement() {
-        return null; // STUB
+        return this.elementAbove; // STUB
     }
 
     // EFFECTS: get the logic element that is below
     public LogicElement getBelowElement() {
-        return null; // STUB
+        return this.elementBelow; // STUB
     }
 
     // MODIFIES: this
-    // EFFECTS: if power status is "off", set the left input to be powered "on" and call isOutputTrue().
+    // EFFECTS: if power status is "off", set the left input to be powered "on" and call checkPowerStatus().
     //          if power status is "on", do nothing (prevents propagation of already powered on elements)
     public void inputLeft() {
-        // STUB
+        if (powerStatus == false) {
+            this.inputLeftStatus = true;
+            checkPowerStatus();
+        }
     }
 
     // MODIFIES: this
-    // EFFECTS: if power status is "off", set the right input to be powered "on" and call isOutputTrue()
+    // EFFECTS: if power status is "off", set the right input to be powered "on" and call checkPowerStatus().
     //          if power status is "on", do nothing (prevents propagation of already powered on elements)
     public void inputRight() {
-        // STUB
+        if (powerStatus == false) {
+            this.inputRightStatus = true;
+            checkPowerStatus();
+        }
     }
 
     // MODIFIES: this
-    // EFFECTS: if power status is "off", set the above input to be powered "on" and call isOutputTrue()
+    // EFFECTS: if power status is "off", set the above input to be powered "on" and call checkPowerStatus().
     //          if power status is "on", do nothing (prevents propagation of already powered on elements)
     public void inputAbove() {
-        // STUB
+        if (powerStatus == false) {
+            this.inputAboveStatus = true;
+            checkPowerStatus();
+        }
     }
 
     // MODIFIES: this
-    // EFFECTS: if power status is "off", set the below input to be powered "on" and call isOutputTrue()
+    // EFFECTS: if power status is "off", set the below input to be powered "on" and call checkPowerStatus().
     //          if power status is "on", do nothing (prevents propagation of already powered on elements)
     public void inputBelow() {
-        // STUB
+        if (powerStatus == false) {
+            this.inputBelowStatus = true;
+            checkPowerStatus();
+        }
     }
 
     // MODIFIES: this
@@ -100,86 +112,97 @@ public abstract class LogicElement {
 
     // return power status value of logic gate
     public boolean getPowerStatus() {
-        return false;// STUB
+        return this.powerStatus;// STUB
     }
 
     // MODIFIES: this
-    // EFFECTS: propogate powered "on" status output to element to the left unless null
+    // EFFECTS: propogate powered "on" status output to element to the left (call inputRight() on logic element)
+    //          unless null
     public void outputLeft() {
-        // STUB
+        if (getLeftElement() != null) {
+            this.getLeftElement().inputRight();
+        }
     }
 
     // MODIFIES: this
-    // EFFECTS: propogate powered "on" status output to element to the right unless null
-    //          (call above element's inputbelow())
+    // EFFECTS: propogate powered "on" status output to element to the right (call inputRight() on logic element)
+    //          unless null
     public void outputRight() {
-        // STUB
+        if (getRightElement() != null) {
+            this.getRightElement().inputLeft();
+        }
     }
 
     // MODIFIES: this
-    // EFFECTS: propogate powered "on" status output to element to the above unless null
+    // EFFECTS: propogate powered "on" status output to element to the above (call inputRight() on logic element)
+    //          unless null
     public void outputAbove() {
-        // STUB
+        if (getAboveElement() != null) {
+            this.getAboveElement().inputBelow();
+        }
     }
 
     // MODIFIES: this
-    // EFFECTS: propogate powered "on" status output to element to the below unless null
+    // EFFECTS: propogate powered "on" status output to element to the below (call inputRight() on logic element)
+    //          unless null
     public void outputBelow() {
-        // STUB
+        if (getBelowElement() != null) {
+            this.getBelowElement().inputAbove();
+        }
     }
 
     // EFFECTS: gets x position
     public int getPosX() {
-        return -1; // STUB
+        return this.PosX; // STUB
     }
 
     // EFFECTS: gets y position
     public int getPosY() {
-        return -1; // STUB
+        return this.PosY; // STUB
     }
 
     // EFFECTS: get left input status for testing purposes
     public boolean getInputLeft() {
-        return false; // STUB
+        return this.inputLeftStatus; // STUB
     }
 
     // EFFECTS: get right input status for testing purposes
     public boolean getInputRight() {
-        return false; // STUB
+        return this.inputRightStatus; // STUB
     }
 
     // EFFECTS: get above input status for testing purposes
     public boolean getInputAbove() {
-        return false; // STUB
+        return this.inputAboveStatus; // STUB
     }
 
     // EFFECTS: get below input status for testing purposes
     public boolean getInputBelow() {
-        return false; // STUB
+        return this.inputBelowStatus; // STUB
     }
 
     // EFFECTS: set left input status for testing purposes
     public void setInputLeft(boolean b) {
-        // STUB
+        this.inputLeftStatus = b;
     }
 
     // EFFECTS: set right input status for testing purposes
     public void setInputRight(boolean b) {
-        // STUB
+        this.inputRightStatus = b;
     }
 
     // EFFECTS: set above input status for testing purposes
     public void setInputAbove(boolean b) {
-        // STUB
+        this.inputAboveStatus = b;
     }
 
     // EFFECTS: set below input status for testing purposes
     public void setInputBelow(boolean b) {
-        // STUB
+        this.inputBelowStatus = b;
     }
 
     // EFFECTS: set power status for testing purposes
     public void setPowerStatus(boolean b) {
-        // STUB
+        this.powerStatus = b;
     }
 }
