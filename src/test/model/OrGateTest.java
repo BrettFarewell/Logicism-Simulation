@@ -6,45 +6,49 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class OrGateTest {
-    private LogicElement andGate;
-    private LogicElement wire;
     private LogicElement orGate;
-    private LogicElement powerSource;
-    private LogicElement soundOutput;
+    private LogicElement wire1;
+    private LogicElement wire2;
+    private LogicElement wire3;
+    private LogicElement wire4;
 
     @BeforeEach
     void runBefore() {
-        wire = new Wire(19, 10, null, orGate, null, null);
-        andGate = new AndGate(21, 10, orGate, null, null, null);
-        powerSource = new PowerSource(20, 11, null, null, null, orGate);
-        soundOutput = new SoundOutput(20, 9);
-        orGate = new OrGate(20, 10, wire, andGate, powerSource, soundOutput);
+        wire1 = new Wire(19, 10, null, orGate, null, null);
+        wire2 = new Wire(21, 10, orGate, null, null, null);
+        wire3 = new Wire(20, 11, null, null, null, orGate);
+        wire4 = new Wire(20, 9, null, null, orGate, null);
+        orGate = new OrGate(20, 10, wire1, wire2, wire3, wire4);
     }
 
     @Test
     void constructorTest() {
         assertEquals(20, orGate.getPosX());
         assertEquals(10, orGate.getPosY());
-        assertEquals(wire, orGate.getLeftElement());
-        assertEquals(andGate, orGate.getRightElement());
-        assertEquals(powerSource, orGate.getAboveElement());
-        assertEquals(soundOutput, orGate.getBelowElement());
+        assertEquals(wire1, orGate.getLeftElement());
+        assertEquals(wire2, orGate.getRightElement());
+        assertEquals(wire3, orGate.getAboveElement());
+        assertEquals(wire4, orGate.getBelowElement());
         assertFalse(orGate.getPowerStatus());
     }
 
     @Test
     void inputPowerStatusOffTests() {
+        orGate.setPowerStatus(false);
         assertFalse(orGate.getInputLeft());
-        assertFalse(orGate.getInputRight());
-        assertFalse(orGate.getInputAbove());
-        assertFalse(orGate.getInputBelow());
         orGate.inputLeft();
-        orGate.inputRight();
-        orGate.inputAbove();
-        orGate.inputBelow();
         assertTrue(orGate.getInputLeft());
+        orGate.setPowerStatus(false);
         assertFalse(orGate.getInputRight());
+        orGate.inputRight();
+        assertFalse(orGate.getInputRight());
+        orGate.setPowerStatus(false);
         assertFalse(orGate.getInputAbove());
+        orGate.inputAbove();
+        assertFalse(orGate.getInputAbove());
+        orGate.setPowerStatus(false);
+        assertFalse(orGate.getInputBelow());
+        orGate.inputBelow();
         assertTrue(orGate.getInputBelow());
     }
 
@@ -83,11 +87,14 @@ public class OrGateTest {
     void checkPowerStatusTest() {
         assertFalse(orGate.getPowerStatus());
         orGate.setInputLeft(true);
+        orGate.checkPowerStatus();
         assertTrue(orGate.getPowerStatus());
         orGate.setInputLeft(false);
         orGate.setInputBelow(true);
+        orGate.checkPowerStatus();
         assertTrue(orGate.getPowerStatus());
         orGate.setInputLeft(true);
+        orGate.checkPowerStatus();
         assertTrue(orGate.getPowerStatus());
     }   
 }

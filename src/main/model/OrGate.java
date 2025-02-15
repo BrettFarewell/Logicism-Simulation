@@ -7,42 +7,57 @@ public class OrGate extends LogicGate  {
     // EFFECTS: Creates an Or Gate at given x and y coordinates, with power status "off"
     //          and set logic elements to the left, right, above and below. Also all inputs to "off"
     public OrGate(int x, int y, LogicElement left, LogicElement right, LogicElement above, LogicElement below) {
-        // STUB
+        this.PosX = x;
+        this.PosY = y;
+        this.elementLeft = left;
+        this.elementRight = right;
+        this.elementAbove = above;
+        this.elementBelow = below;
+        this.powerStatus = false;
+        this.inputLeftStatus = false;
+        this.inputRightStatus = false;
+        this.inputAboveStatus = false;
+        this.inputBelowStatus = false;
     }
 
     // MODIFIES: this
     // EFFECTS: checks to see if left or bottom inputs are "on", if so turns power status "on" and calls outputRight()
     public void checkPowerStatus() {
-        // STUB
+        if (inputLeftStatus == true || inputBelowStatus == true) {
+            this.powerStatus = true;
+            outputRight();
+        } else {
+            this.powerStatus = false;
+        }
     }
 
-    // EFFECTS: takes input from right and does nothing
+    // EFFECTS: takes input from right element and does nothing
     @Override
     public void inputRight() {
-        // STUB
+        
     }
 
-    // EFFECTS: takes input from above and does nothing
+    // EFFECTS: takes input from above element and does nothing
     @Override
     public void inputAbove() {
-        // STUB
+        
     }
 
     // EFFECTS: should not be called, but if so, does nothing and stops propagation of output to the left
     @Override
     public void outputLeft() {
-        // STUB
+        
     }
 
     // EFFECTS: should not be called, but if so, does nothing and stops propagation of output to above
     @Override
     public void outputAbove() {
-        // STUB
+        
     }
 
     // EFFECTS: should not be called, but if so, does nothing and stops propagation of output to below
     @Override
     public void outputBelow() {
-        // STUB
+        
     }
 }
