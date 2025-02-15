@@ -43,7 +43,7 @@ public class SoundOutputTest {
     void inputRightTestPowerStatusOff() {
         assertFalse(soundOutput.getInputRight());
         assertFalse(soundOutput.getPowerStatus());
-        soundOutput.inputLeft();
+        soundOutput.inputRight();
         assertTrue(soundOutput.getInputRight());
         assertTrue(soundOutput.getPowerStatus());
     }
@@ -53,7 +53,7 @@ public class SoundOutputTest {
         soundOutput.setPowerStatus(true);
         assertFalse(soundOutput.getInputRight());
         assertTrue(soundOutput.getPowerStatus());
-        soundOutput.inputLeft();
+        soundOutput.inputRight();
         assertFalse(soundOutput.getInputRight());
         assertTrue(soundOutput.getPowerStatus());
     }
@@ -62,7 +62,7 @@ public class SoundOutputTest {
     void inputAboveTestPowerStatusOff() {
         assertFalse(soundOutput.getInputAbove());
         assertFalse(soundOutput.getPowerStatus());
-        soundOutput.inputLeft();
+        soundOutput.inputAbove();
         assertTrue(soundOutput.getInputAbove());
         assertTrue(soundOutput.getPowerStatus());
     }
@@ -72,7 +72,7 @@ public class SoundOutputTest {
         soundOutput.setPowerStatus(true);
         assertFalse(soundOutput.getInputAbove());
         assertTrue(soundOutput.getPowerStatus());
-        soundOutput.inputLeft();
+        soundOutput.inputAbove();
         assertFalse(soundOutput.getInputAbove());
         assertTrue(soundOutput.getPowerStatus());
     }
@@ -81,7 +81,7 @@ public class SoundOutputTest {
     void inputBelowTestPowerStatusOff() {
         assertFalse(soundOutput.getInputBelow());
         assertFalse(soundOutput.getPowerStatus());
-        soundOutput.inputLeft();
+        soundOutput.inputBelow();
         assertTrue(soundOutput.getInputBelow());
         assertTrue(soundOutput.getPowerStatus());
     }
@@ -91,7 +91,7 @@ public class SoundOutputTest {
         soundOutput.setPowerStatus(true);
         assertFalse(soundOutput.getInputBelow());
         assertTrue(soundOutput.getPowerStatus());
-        soundOutput.inputLeft();
+        soundOutput.inputBelow();
         assertFalse(soundOutput.getInputBelow());
         assertTrue(soundOutput.getPowerStatus());
     }
@@ -103,6 +103,7 @@ public class SoundOutputTest {
         soundOutput.checkPowerStatus();
         assertTrue(soundOutput.getPowerStatus());
         soundOutput.setInputLeft(false);
+        soundOutput.checkPowerStatus();
         assertFalse(soundOutput.getPowerStatus());
     }
 
@@ -113,6 +114,7 @@ public class SoundOutputTest {
         soundOutput.checkPowerStatus();
         assertTrue(soundOutput.getPowerStatus());
         soundOutput.setInputRight(false);
+        soundOutput.checkPowerStatus();
         assertFalse(soundOutput.getPowerStatus());
     }
 
@@ -123,6 +125,7 @@ public class SoundOutputTest {
         soundOutput.checkPowerStatus();
         assertTrue(soundOutput.getPowerStatus());
         soundOutput.setInputAbove(false);
+        soundOutput.checkPowerStatus();
         assertFalse(soundOutput.getPowerStatus());
     }
 
@@ -133,6 +136,7 @@ public class SoundOutputTest {
         soundOutput.checkPowerStatus();
         assertTrue(soundOutput.getPowerStatus());
         soundOutput.setInputBelow(false);
+        soundOutput.checkPowerStatus();
         assertFalse(soundOutput.getPowerStatus());
     }   
 }
