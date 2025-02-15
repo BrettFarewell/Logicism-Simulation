@@ -61,7 +61,7 @@ public class ObjectPlacerTest {
         assertEquals(scenario.getScreenHeight() - 1, objectPlacer.getPosY());
         objectPlacer.moveUp();
         assertEquals(scenario.getScreenHeight() - 2, objectPlacer.getPosY());
-        moveLeft(scenario.getScreenHeight() - 3);
+        moveUp(scenario.getScreenHeight() - 3);
         assertEquals(1, objectPlacer.getPosY());
         objectPlacer.moveUp();
         assertEquals(0, objectPlacer.getPosY());
