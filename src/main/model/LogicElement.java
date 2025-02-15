@@ -145,6 +145,26 @@ public abstract class LogicElement {
         return false; // STUB
     }
 
+    // EFFECTS: set left input status for testing purposes
+    public void setInputLeft(boolean b) {
+        // STUB
+    }
+
+    // EFFECTS: set right input status for testing purposes
+    public void setInputRight(boolean b) {
+        // STUB
+    }
+
+    // EFFECTS: set above input status for testing purposes
+    public void setInputAbove(boolean b) {
+        // STUB
+    }
+
+    // EFFECTS: set below input status for testing purposes
+    public void setInputBelow(boolean b) {
+        // STUB
+    }
+
     // EFFECTS: set power status for testing purposes
     public void setPowerStatus(boolean b) {
         // STUB
