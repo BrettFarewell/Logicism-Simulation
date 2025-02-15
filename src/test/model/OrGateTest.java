@@ -85,6 +85,7 @@ public class OrGateTest {
 
     @Test
     void checkPowerStatusTest() {
+        orGate.checkPowerStatus();
         assertFalse(orGate.getPowerStatus());
         orGate.setInputLeft(true);
         orGate.checkPowerStatus();
