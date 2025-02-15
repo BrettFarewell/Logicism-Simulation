@@ -120,4 +120,24 @@ public abstract class LogicElement {
     public int getPosY() {
         return -1; // STUB
     }
+
+    // EFFECTS: get left input status for testing purposes
+    public boolean getInputLeft() {
+        return false; // STUB
+    }
+
+    // EFFECTS: get right input status for testing purposes
+    public boolean getInputRight() {
+        return false; // STUB
+    }
+
+    // EFFECTS: get above input status for testing purposes
+    public boolean getInputAbove() {
+        return false; // STUB
+    }
+
+    // EFFECTS: get below input status for testing purposes
+    public boolean getInputBelow() {
+        return false; // STUB
+    }
 }
