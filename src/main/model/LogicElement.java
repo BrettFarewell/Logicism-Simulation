@@ -7,17 +7,17 @@ package model;
 // that are to above, below, right, and left of it in the scenario
 public abstract class LogicElement {
 
-    private int PosX;
-    private int PosY;
-    private LogicElement elementLeft;
-    private LogicElement elementRight;
-    private LogicElement elementAbove;
-    private LogicElement elementBelow;
-    private boolean inputLeftStatus;
-    private boolean inputRightStatus;
-    private boolean inputAboveStatus;
-    private boolean inputBelowStatus;
-    private boolean powerStatus;
+    protected int PosX;
+    protected int PosY;
+    protected LogicElement elementLeft;
+    protected LogicElement elementRight;
+    protected LogicElement elementAbove;
+    protected LogicElement elementBelow;
+    protected boolean inputLeftStatus;
+    protected boolean inputRightStatus;
+    protected boolean inputAboveStatus;
+    protected boolean inputBelowStatus;
+    protected boolean powerStatus;
 
     // MODIFIES: this
     // EFFECTS: set the logic element that is to the left
