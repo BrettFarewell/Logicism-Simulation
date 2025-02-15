@@ -48,4 +48,19 @@ public class PowerSourceTest {
         assertFalse(powerSource.getInputAbove());
         assertFalse(powerSource.getInputBelow());
     }
+
+    @Test
+    void checkPowerStatusTest() {
+        assertFalse(powerSource.getLeftElement().getInputRight());
+        assertFalse(powerSource.getRightElement().getInputLeft());
+        assertFalse(powerSource.getAboveElement().getInputBelow());
+        assertFalse(powerSource.getBelowElement().getInputAbove());
+        assertTrue(powerSource.getPowerStatus());
+        powerSource.checkPowerStatus();
+        assertTrue(powerSource.getLeftElement().getInputRight());
+        assertTrue(powerSource.getRightElement().getInputLeft());
+        assertTrue(powerSource.getAboveElement().getInputBelow());
+        assertTrue(powerSource.getBelowElement().getInputAbove());
+        assertTrue(powerSource.getPowerStatus());
+    }
 }
