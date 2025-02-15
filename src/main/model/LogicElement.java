@@ -140,4 +140,9 @@ public abstract class LogicElement {
     public boolean getInputBelow() {
         return false; // STUB
     }
+
+    // EFFECTS: set power status for testing purposes
+    public void setPowerStatus(boolean b) {
+        // STUB
+    }
 }
