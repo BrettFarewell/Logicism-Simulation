@@ -67,6 +67,7 @@ public class AndGateTest {
 
     @Test
     void outputTestsRightElementNull() {
+        andGate.setRightElement(null);
         assertFalse(andGate.getLeftElement().getInputRight());
         assertFalse(andGate.getAboveElement().getInputBelow());
         assertFalse(andGate.getBelowElement().getInputAbove());
