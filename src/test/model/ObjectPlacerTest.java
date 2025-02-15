@@ -11,7 +11,7 @@ public class ObjectPlacerTest {
 
     @BeforeEach
     void runBefore() {
-        scenario = new Scenario();
+        scenario = new Scenario("Scenario1");
         objectPlacer = new ObjectPlacer(scenario);
     }
 
