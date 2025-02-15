@@ -6,29 +6,29 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class PowerSourceTest {
-    private LogicElement andGate;
-    private LogicElement wire;
-    private LogicElement orGate;
     private LogicElement powerSource;
-    private LogicElement soundOutput;
+    private LogicElement wire1;
+    private LogicElement wire2;
+    private LogicElement wire3;
+    private LogicElement wire4;
 
     @BeforeEach
     void runBefore() {
-        wire = new Wire(19, 10, null, powerSource, null, null);
-        andGate = new AndGate(21, 10, powerSource, null, null, null);
-        orGate = new OrGate(20, 11, null, null, null, powerSource);
-        soundOutput = new SoundOutput(20, 9);
-        powerSource = new PowerSource(20, 10, wire, andGate, orGate, soundOutput);
+        wire1 = new Wire(19, 10, null, powerSource, null, null);
+        wire2 = new Wire(21, 10, powerSource, null, null, null);
+        wire3 = new Wire(20, 11, null, null, null, powerSource);
+        wire4 = new Wire(20, 9, null, null, powerSource, null);
+        powerSource = new PowerSource(20, 10, wire1, wire2, wire3, wire4);
     }
 
     @Test
     void constructorTest() {
         assertEquals(20, powerSource.getPosX());
         assertEquals(10, powerSource.getPosY());
-        assertEquals(wire, powerSource.getLeftElement());
-        assertEquals(andGate, powerSource.getRightElement());
-        assertEquals(orGate, powerSource.getAboveElement());
-        assertEquals(soundOutput, powerSource.getBelowElement());
+        assertEquals(wire1, powerSource.getLeftElement());
+        assertEquals(wire2, powerSource.getRightElement());
+        assertEquals(wire3, powerSource.getAboveElement());
+        assertEquals(wire4, powerSource.getBelowElement());
         assertTrue(powerSource.getPowerStatus());
     }
 
