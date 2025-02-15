@@ -1,7 +1,7 @@
 package model;
 
 // Represents a light output device with x and y position in the scenario. If powered "on" will light up
-public class LightOutput extends LogicElement {
+public class LightOutput extends OutputElement {
 
     // EFFECT: creates an output of given type, with power status "off", and at position x an y
     //         (no need for elements around it as it cannot propgate power)

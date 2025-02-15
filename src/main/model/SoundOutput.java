@@ -1,7 +1,7 @@
 package model;
 
 // Represents a sound output device with x and y position in the scenario. If powered "on" will play sound
-public class SoundOutput extends LogicElement {
+public class SoundOutput extends OutputElement {
     
     // EFFECT: creates an output of given type, with power status "off", and at position x an y
     //         (no need for elements around it as it cannot propgate power)
