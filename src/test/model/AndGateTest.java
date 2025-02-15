@@ -15,9 +15,9 @@ public class AndGateTest {
 
     @BeforeEach
     void runBefore() {
-        wire = new Wire(19, 10, null, wire, null, null);
-        orGate = new OrGate(21, 10, wire, null, null, null);
-        powerSource = new PowerSource(20, 11, null, null, null, wire);
+        wire = new Wire(19, 10, null, andGate, null, null);
+        orGate = new OrGate(21, 10, andGate, null, null, null);
+        powerSource = new PowerSource(20, 11, null, null, null, andGate);
         soundOutput = new SoundOutput(20, 9);
         andGate = new AndGate(20, 10, andGate, orGate, powerSource, soundOutput);
     }
