@@ -7,27 +7,27 @@ import org.junit.jupiter.api.Test;
 
 public class WireTest {
     private LogicElement wire;
-    private LogicElement andGate;
-    private LogicElement orGate;
-    private LogicElement powerSource;
-    private LogicElement soundOutput;
+    private LogicElement wire1;
+    private LogicElement wire2;
+    private LogicElement wire3;
+    private LogicElement wire4;
 
     @BeforeEach
     void runBefore() {
-        andGate = new AndGate(19, 10, null, wire, null, null);
-        orGate = new OrGate(21, 10, wire, null, null, null);
-        powerSource = new PowerSource(20, 11, null, null, null, wire);
-        soundOutput = new SoundOutput(20, 9);
-        wire = new Wire(20, 10, andGate, orGate, powerSource, null);
+        wire1 = new Wire(19, 10, null, wire, null, null);
+        wire2 = new Wire(21, 10, wire, null, null, null);
+        wire3 = new Wire(20, 11, null, null, null, wire);
+        wire4 = new Wire(20, 9, null, null, wire, null);
+        wire = new Wire(20, 10, wire1, wire2, wire3, null);
     }
 
     @Test
     void constructorTest() {
         assertEquals(20, wire.getPosX());
         assertEquals(10, wire.getPosY());
-        assertEquals(andGate, wire.getLeftElement());
-        assertEquals(orGate, wire.getRightElement());
-        assertEquals(powerSource, wire.getAboveElement());
+        assertEquals(wire1, wire.getLeftElement());
+        assertEquals(wire2, wire.getRightElement());
+        assertEquals(wire3, wire.getAboveElement());
         assertEquals(null, wire.getBelowElement());
         assertFalse(wire.getInputLeft());
         assertFalse(wire.getInputRight());
@@ -46,14 +46,14 @@ public class WireTest {
         assertNull(wire.getRightElement());
         assertNull(wire.getAboveElement());
         assertNull(wire.getBelowElement());
-        wire.setLeftElement(andGate);
-        wire.setRightElement(orGate);
-        wire.setAboveElement(powerSource);
-        wire.setBelowElement(soundOutput);
-        assertEquals(andGate, wire.getLeftElement());
-        assertEquals(orGate, wire.getRightElement());
-        assertEquals(powerSource, wire.getAboveElement());
-        assertEquals(soundOutput, wire.getBelowElement());
+        wire.setLeftElement(wire1);
+        wire.setRightElement(wire2);
+        wire.setAboveElement(wire3);
+        wire.setBelowElement(wire4);
+        assertEquals(wire1, wire.getLeftElement());
+        assertEquals(wire2, wire.getRightElement());
+        assertEquals(wire3, wire.getAboveElement());
+        assertEquals(wire4, wire.getBelowElement());
     }
 
     @Test
@@ -79,7 +79,7 @@ public class WireTest {
     void inputRightTestPowerStatusOff() {
         assertFalse(wire.getInputRight());
         assertFalse(wire.getPowerStatus());
-        wire.inputLeft();
+        wire.inputRight();
         assertTrue(wire.getInputRight());
         assertTrue(wire.getPowerStatus());
     }
@@ -89,7 +89,7 @@ public class WireTest {
         wire.setPowerStatus(true);
         assertFalse(wire.getInputRight());
         assertTrue(wire.getPowerStatus());
-        wire.inputLeft();
+        wire.inputRight();
         assertFalse(wire.getInputRight());
         assertTrue(wire.getPowerStatus());
     }
@@ -98,7 +98,7 @@ public class WireTest {
     void inputAboveTestPowerStatusOff() {
         assertFalse(wire.getInputAbove());
         assertFalse(wire.getPowerStatus());
-        wire.inputLeft();
+        wire.inputAbove();
         assertTrue(wire.getInputAbove());
         assertTrue(wire.getPowerStatus());
     }
@@ -108,7 +108,7 @@ public class WireTest {
         wire.setPowerStatus(true);
         assertFalse(wire.getInputAbove());
         assertTrue(wire.getPowerStatus());
-        wire.inputLeft();
+        wire.inputAbove();
         assertFalse(wire.getInputAbove());
         assertTrue(wire.getPowerStatus());
     }
@@ -117,7 +117,7 @@ public class WireTest {
     void inputBelowTestPowerStatusOff() {
         assertFalse(wire.getInputBelow());
         assertFalse(wire.getPowerStatus());
-        wire.inputLeft();
+        wire.inputBelow();
         assertTrue(wire.getInputBelow());
         assertTrue(wire.getPowerStatus());
     }
@@ -127,7 +127,7 @@ public class WireTest {
         wire.setPowerStatus(true);
         assertFalse(wire.getInputBelow());
         assertTrue(wire.getPowerStatus());
-        wire.inputLeft();
+        wire.inputBelow();
         assertFalse(wire.getInputBelow());
         assertTrue(wire.getPowerStatus());
     }
@@ -139,6 +139,7 @@ public class WireTest {
         wire.checkPowerStatus();
         assertTrue(wire.getPowerStatus());
         wire.setInputLeft(false);
+        wire.checkPowerStatus();
         assertFalse(wire.getPowerStatus());
     }
 
@@ -149,6 +150,7 @@ public class WireTest {
         wire.checkPowerStatus();
         assertTrue(wire.getPowerStatus());
         wire.setInputRight(false);
+        wire.checkPowerStatus();
         assertFalse(wire.getPowerStatus());
     }
 
@@ -159,6 +161,7 @@ public class WireTest {
         wire.checkPowerStatus();
         assertTrue(wire.getPowerStatus());
         wire.setInputAbove(false);
+        wire.checkPowerStatus();
         assertFalse(wire.getPowerStatus());
     }
 
@@ -169,13 +172,14 @@ public class WireTest {
         wire.checkPowerStatus();
         assertTrue(wire.getPowerStatus());
         wire.setInputBelow(false);
+        wire.checkPowerStatus();
         assertFalse(wire.getPowerStatus());
     }
 
     @Test
     void outputLeftNullTest() {
         wire.setLeftElement(null);
-        wire.setBelowElement(soundOutput);
+        wire.setBelowElement(wire4);
         assertFalse(wire.getRightElement().getInputLeft());
         assertFalse(wire.getAboveElement().getInputBelow());
         assertFalse(wire.getBelowElement().getInputAbove());
@@ -191,7 +195,7 @@ public class WireTest {
     @Test
     void outputRightNullTest() {
         wire.setRightElement(null);
-        wire.setBelowElement(soundOutput);
+        wire.setBelowElement(wire4);
         assertFalse(wire.getLeftElement().getInputRight());
         assertFalse(wire.getAboveElement().getInputBelow());
         assertFalse(wire.getBelowElement().getInputAbove());
@@ -207,7 +211,7 @@ public class WireTest {
     @Test
     void outputAboveNullTest() {
         wire.setAboveElement(null);
-        wire.setBelowElement(soundOutput);
+        wire.setBelowElement(wire4);
         assertFalse(wire.getLeftElement().getInputRight());
         assertFalse(wire.getRightElement().getInputLeft());
         assertFalse(wire.getBelowElement().getInputAbove());

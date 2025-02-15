@@ -29,10 +29,13 @@ public class Wire extends LogicElement {
             inputRightStatus == true ||
             inputAboveStatus == true ||
             inputBelowStatus == true) {
-                outputLeft();
-                outputRight();
-                outputAbove();
-                outputBelow();
-            }
+            this.powerStatus = true;
+            outputLeft();
+            outputRight();
+            outputAbove();
+            outputBelow();
+        } else {
+            this.powerStatus = false;
+        }
     }
 }
