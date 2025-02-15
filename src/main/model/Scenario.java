@@ -1,7 +1,5 @@
 package model;
 
-import model.logicgate.*;
-
 import java.util.List;
 import java.util.ArrayList;
 
@@ -19,38 +17,57 @@ public class Scenario {
     }
 
     // MODIFIES: this
-    // EFFECT: creates an AND Gate at x and y position and adds it to list of logic gates
+    // EFFECT: take input character c
+    //              if c == X, call addAndGate(x, y)
+    //              if c == X, call addOrGate(x, y)
+    //              if c == X, call addPowerSourcex, y)
+    //              if c == X, call addWire(x, y)
+    //              if c == X, call addLightOutput(x, y)
+    //              if c == X, call addSoundOutput(x, y)
+    public void addLogicElement(char c, int x, int y) {
+        // STUB
+    }
+
+    // MODIFIES: this
+    // EFFECT: creates an AND Gate at x and y position and adds it to list of logic elements
     public void addAndGate(int x, int y) {
         // STUB
     }
 
     // MODIFIES: this
-    // EFFECT: creates an OR Gate at x and y position and adds it to list of logic gates
+    // EFFECT: creates an OR Gate at x and y position and adds it to list of logic elements
     public void addOrGate(int x, int y) {
         // STUB
     }
 
     // MODIFIES: this
-    // EFFECT: creates a power source at x and y position and adds it to list of power sources
+    // EFFECT: creates a power source at x and y position and adds it to list of logic element
+    //         and list of power sources
     public void addPowerSource(int x, int y) {
         // STUB
     }
 
     // MODIFIES: this
-    // EFFECT: creates a wire at x and y position and adds it to list of wires
+    // EFFECT: creates a wire at x and y position and adds it to list of logic elements
     public void addWire(int x, int y) {
         // STUB
     }
     
     // MODIFIES: this
-    // EFFECT: creates an output element of type ("sound" or "light") at x and y position and adds it to list of
-    //         output elements
-    public void addOutputElement(String type, int x, int y) {
+    // EFFECT: creates a light output at x and y position and adds it to list of logic elements
+    public void addLightOutput(int x, int y) {
+        // STUB
+    }
+
+    // MODIFIES: this
+    // EFFECT: creates a light output at x and y position and adds it to list of logic elements
+    //         and list of sound elements
+    public void addSoundOutput(int x, int y) {
         // STUB
     }
 
     // EFFECT: return list of logic gates
-    public List<LogicGate> getLogicGates() {
+    public List<LogicElement> getLogicGates() {
         return null; // STUB
     }
 
@@ -65,7 +82,7 @@ public class Scenario {
     }
 
     // EFFECT: return list of output elements
-    public List<OutputElement> getOutputElements() {
+    public List<LightOutput> getOutputElements() {
         return null; // STUB
     }
 
