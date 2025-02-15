@@ -1,7 +1,7 @@
 package ui;
 
+import model.LogicElement;
 import model.Scenario;
-import model.logicgate.*;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -73,7 +73,7 @@ public class ScenarioDisplayer {
     
 
     // EFFECTS: returns list of current logic gates, throw NoGatesException if list is empty
-    public List<LogicGate> getLogicGateList() {
+    public List<LogicElement> getLogicGateList() {
         return null; // STUB
     }
 }
