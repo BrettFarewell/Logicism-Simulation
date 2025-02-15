@@ -8,28 +8,28 @@ import org.junit.jupiter.api.Test;
 
 public class AndGateTest {
     private LogicElement andGate;
-    private LogicElement wire;
-    private LogicElement orGate;
-    private LogicElement powerSource;
-    private LogicElement soundOutput;
+    private LogicElement wire1;
+    private LogicElement wire2;
+    private LogicElement wire3;
+    private LogicElement wire4;
 
     @BeforeEach
     void runBefore() {
-        wire = new Wire(19, 10, null, andGate, null, null);
-        orGate = new OrGate(21, 10, andGate, null, null, null);
-        powerSource = new PowerSource(20, 11, null, null, null, andGate);
-        soundOutput = new SoundOutput(20, 9);
-        andGate = new AndGate(20, 10, andGate, orGate, powerSource, soundOutput);
+        wire1 = new Wire(19, 10, null, andGate, null, null);
+        wire2 = new Wire(21, 10, andGate, null, null, null);
+        wire3 = new Wire(20, 11, null, null, null, andGate);
+        wire4 = new Wire(20, 9, null, null, andGate, null);
+        andGate = new AndGate(20, 10, wire1, wire2, wire3, wire4);
     }
 
     @Test
     void constructorTest() {
         assertEquals(20, andGate.getPosX());
         assertEquals(10, andGate.getPosY());
-        assertEquals(wire, andGate.getLeftElement());
-        assertEquals(orGate, andGate.getRightElement());
-        assertEquals(powerSource, andGate.getAboveElement());
-        assertEquals(soundOutput, andGate.getBelowElement());
+        assertEquals(wire1, andGate.getLeftElement());
+        assertEquals(wire2, andGate.getRightElement());
+        assertEquals(wire3, andGate.getAboveElement());
+        assertEquals(wire4, andGate.getBelowElement());
         assertFalse(andGate.getPowerStatus());
     }
 
@@ -84,11 +84,14 @@ public class AndGateTest {
     void checkPowerStatusTest() {
         assertFalse(andGate.getPowerStatus());
         andGate.setInputLeft(true);
+        andGate.checkPowerStatus();
         assertFalse(andGate.getPowerStatus());
         andGate.setInputLeft(false);
         andGate.setInputBelow(true);
+        andGate.checkPowerStatus();
         assertFalse(andGate.getPowerStatus());
         andGate.setInputLeft(true);
+        andGate.checkPowerStatus();
         assertTrue(andGate.getPowerStatus());
     }
 }
