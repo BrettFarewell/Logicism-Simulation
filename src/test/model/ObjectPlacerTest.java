@@ -55,33 +55,33 @@ public class ObjectPlacerTest {
 
     @Test
     void moveUpTests() {
-        assertEquals(0, objectPlacer.getPosY());
+        moveDown(scenario.getScreenHeight());
+        assertEquals(scenario.getScreenHeight(), objectPlacer.getPosY());
         objectPlacer.moveUp();
-        assertEquals(1, objectPlacer.getPosY());
-        objectPlacer.moveUp();
-        assertEquals(2, objectPlacer.getPosY());
-        moveLeft(scenario.getScreenHeight() - 3);
         assertEquals(scenario.getScreenHeight() - 1, objectPlacer.getPosY());
         objectPlacer.moveUp();
-        assertEquals(scenario.getScreenHeight(), objectPlacer.getPosY());
+        assertEquals(scenario.getScreenHeight() - 2, objectPlacer.getPosY());
+        moveLeft(scenario.getScreenHeight() - 3);
+        assertEquals(1, objectPlacer.getPosY());
         objectPlacer.moveUp();
-        assertEquals(scenario.getScreenHeight(), objectPlacer.getPosY());
+        assertEquals(0, objectPlacer.getPosY());
+        objectPlacer.moveUp();
+        assertEquals(0, objectPlacer.getPosY());
     }
 
     @Test
     void moveDownTests() {
-        moveUp(scenario.getScreenHeight());
-        assertEquals(scenario.getScreenHeight(), objectPlacer.getPosY());
+        assertEquals(0, objectPlacer.getPosY());
         objectPlacer.moveDown();
-        assertEquals(scenario.getScreenHeight() - 1, objectPlacer.getPosY());
-        objectPlacer.moveDown();
-        assertEquals(scenario.getScreenHeight() - 2, objectPlacer.getPosY());
-        moveDown(scenario.getScreenHeight() - 3);
         assertEquals(1, objectPlacer.getPosY());
         objectPlacer.moveDown();
-        assertEquals(0, objectPlacer.getPosY());
+        assertEquals(2, objectPlacer.getPosY());
+        moveDown(scenario.getScreenHeight() - 3);
+        assertEquals(scenario.getScreenHeight() - 1, objectPlacer.getPosY());
         objectPlacer.moveDown();
-        assertEquals(0, objectPlacer.getPosY());
+        assertEquals(scenario.getScreenHeight(), objectPlacer.getPosY());
+        objectPlacer.moveDown();
+        assertEquals(scenario.getScreenHeight(), objectPlacer.getPosY());
     }
 
     // MODIFIES: this
