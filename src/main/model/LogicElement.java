@@ -91,25 +91,21 @@ public abstract class LogicElement {
         return false;// STUB
     }
 
-    // MODIFIES: this
     // EFFECTS: propogate powered "on" status output to element to the left
     public void outputLeft() {
         // STUB
     }
 
-    // MODIFIES: this
     // EFFECTS: propogate powered "on" status output to element to the right
     public void outputRight() {
         // STUB
     }
 
-    // MODIFIES: this
     // EFFECTS: propogate powered "on" status output to element to the above
     public void outputAbove() {
         // STUB
     }
 
-    // MODIFIES: this
     // EFFECTS: propogate powered "on" status output to element to the below
     public void outputBelow() {
         // STUB
