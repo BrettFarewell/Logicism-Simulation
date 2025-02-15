@@ -9,25 +9,25 @@ public abstract class LogicElement {
 
     // MODIFIES: this
     // EFFECTS: set the logic element that is to the left
-    public void setLeftElement() {
+    public void setLeftElement(LogicElement logicElement) {
         // STUB
     }
 
     // MODIFIES: this
     // EFFECTS: set the logic element that is to the right
-    public void setRightElement() {
+    public void setRightElement(LogicElement logicElement) {
         // STUB
     }
 
     // MODIFIES: this
     // EFFECTS: set the logic element that is above
-    public void setAboveElement() {
+    public void setAboveElement(LogicElement logicElement) {
         // STUB
     }
 
     // MODIFIES: this
     // EFFECTS: set the logic element that is below
-    public void setBelowElement() {
+    public void setBelowElement(LogicElement logicElement) {
         // STUB
     }
 
