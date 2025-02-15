@@ -2,7 +2,7 @@ package model;
 
 // Respresents the OR Gate logic gate that has a left and a bottom input, an power status, a right output,
 // and an x and an y position.
-public class OrGate extends LogicElement  {
+public class OrGate extends LogicGate  {
 
     // EFFECTS: Creates an Or Gate at given x and y coordinates, with power status "off"
     //          and set logic elements to the left, right, above and below. Also all inputs to "off"
