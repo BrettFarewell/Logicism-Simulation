@@ -4,8 +4,8 @@ package model;
 public class PowerSource extends LogicElement {
     private static final boolean POWER_STATUS = true;
     
-    // EFFECTS: creates a power source where power will start from, sets x and y positions, and set logic elements to the
-    //          left, right, above and below. 
+    // EFFECTS: creates a power source where power will start from, sets x and y positions, and set logic elements
+    //          to the left, right, above and below. 
     public PowerSource(int x, int y, LogicElement left, LogicElement right, LogicElement above, LogicElement below) {
         // STUB
     }
