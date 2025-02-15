@@ -35,17 +35,21 @@ public class AndGateTest {
 
     @Test
     void inputPowerStatusOffTests() {
+        andGate.setPowerStatus(false);
         assertFalse(andGate.getInputLeft());
-        assertFalse(andGate.getInputRight());
-        assertFalse(andGate.getInputAbove());
-        assertFalse(andGate.getInputBelow());
         andGate.inputLeft();
-        andGate.inputRight();
-        andGate.inputAbove();
-        andGate.inputBelow();
         assertTrue(andGate.getInputLeft());
+        andGate.setPowerStatus(false);
         assertFalse(andGate.getInputRight());
+        andGate.inputRight();
+        assertFalse(andGate.getInputRight());
+        andGate.setPowerStatus(false);
         assertFalse(andGate.getInputAbove());
+        andGate.inputAbove();
+        assertFalse(andGate.getInputAbove());
+        andGate.setPowerStatus(false);
+        assertFalse(andGate.getInputBelow());
+        andGate.inputBelow();
         assertTrue(andGate.getInputBelow());
     }
 

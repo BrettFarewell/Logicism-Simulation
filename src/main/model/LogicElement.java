@@ -45,22 +45,22 @@ public abstract class LogicElement {
 
     // EFFECTS: get the logic element that is to the left
     public LogicElement getLeftElement() {
-        return this.elementLeft; // STUB
+        return this.elementLeft;
     }
 
     // EFFECTS: get the logic element that is to the right
     public LogicElement getRightElement() {
-        return this.elementRight; // STUB
+        return this.elementRight;
     }
 
     // EFFECTS: get the logic element that is above
     public LogicElement getAboveElement() {
-        return this.elementAbove; // STUB
+        return this.elementAbove;
     }
 
     // EFFECTS: get the logic element that is below
     public LogicElement getBelowElement() {
-        return this.elementBelow; // STUB
+        return this.elementBelow;
     }
 
     // MODIFIES: this
@@ -112,7 +112,7 @@ public abstract class LogicElement {
 
     // return power status value of logic gate
     public boolean getPowerStatus() {
-        return this.powerStatus;// STUB
+        return this.powerStatus;
     }
 
     // MODIFIES: this
@@ -153,32 +153,32 @@ public abstract class LogicElement {
 
     // EFFECTS: gets x position
     public int getPosX() {
-        return this.PosX; // STUB
+        return this.PosX;
     }
 
     // EFFECTS: gets y position
     public int getPosY() {
-        return this.PosY; // STUB
+        return this.PosY;
     }
 
     // EFFECTS: get left input status for testing purposes
     public boolean getInputLeft() {
-        return this.inputLeftStatus; // STUB
+        return this.inputLeftStatus;
     }
 
     // EFFECTS: get right input status for testing purposes
     public boolean getInputRight() {
-        return this.inputRightStatus; // STUB
+        return this.inputRightStatus;
     }
 
     // EFFECTS: get above input status for testing purposes
     public boolean getInputAbove() {
-        return this.inputAboveStatus; // STUB
+        return this.inputAboveStatus;
     }
 
     // EFFECTS: get below input status for testing purposes
     public boolean getInputBelow() {
-        return this.inputBelowStatus; // STUB
+        return this.inputBelowStatus;
     }
 
     // EFFECTS: set left input status for testing purposes
