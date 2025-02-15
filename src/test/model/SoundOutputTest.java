@@ -7,10 +7,18 @@ import org.junit.jupiter.api.Test;
 
 public class SoundOutputTest {
     private LogicElement soundOutput;
+    private LogicElement wire1;
+    private LogicElement wire2;
+    private LogicElement wire3;
+    private LogicElement wire4;
 
     @BeforeEach
     void runBefore() {
-        soundOutput = new SoundOutput(20, 10);
+        wire1 = new Wire(19, 10, null, soundOutput, null, null);
+        wire2 = new Wire(21, 10, soundOutput, null, null, null);
+        wire3 = new Wire(20, 11, null, null, null, soundOutput);
+        wire4 = new Wire(20, 9, null, null, soundOutput, null);
+        soundOutput = new SoundOutput(20, 10, wire1, wire2, wire3, wire4);
     }
 
     @Test
@@ -138,5 +146,23 @@ public class SoundOutputTest {
         soundOutput.setInputBelow(false);
         soundOutput.checkPowerStatus();
         assertFalse(soundOutput.getPowerStatus());
-    }   
+    }
+
+    // EFFECT: tests the outputs of the OutputElement abstract class. Outputs should not be called but if they are,
+    //         they do nothing
+    @Test
+    void outputsTest() {
+        assertFalse(soundOutput.getRightElement().getInputLeft());
+        assertFalse(soundOutput.getLeftElement().getInputRight());
+        assertFalse(soundOutput.getAboveElement().getInputBelow());
+        assertFalse(soundOutput.getBelowElement().getInputAbove());
+        soundOutput.outputLeft();
+        soundOutput.outputRight();
+        soundOutput.outputAbove();
+        soundOutput.outputBelow();
+        assertFalse(soundOutput.getRightElement().getInputLeft());
+        assertFalse(soundOutput.getLeftElement().getInputRight());
+        assertFalse(soundOutput.getAboveElement().getInputBelow());
+        assertFalse(soundOutput.getBelowElement().getInputAbove());
+    }
 }

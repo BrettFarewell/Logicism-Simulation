@@ -3,11 +3,15 @@ package model;
 // Represents a sound output device with x and y position in the scenario. If powered "on" will play sound
 public class SoundOutput extends OutputElement {
     
-    // EFFECT: creates an output of given type, with power status "off", and at position x an y
-    //         (no need for elements around it as it cannot propgate power)
-    public SoundOutput(int x, int y) {
+    // EFFECT: creates an output of given type, with power status "off", and at position x an y, all inputs are "off",
+    //         and set logic elements to the left, right, above and below.
+    public SoundOutput(int x, int y, LogicElement left, LogicElement right, LogicElement above, LogicElement below) {
         this.PosX = x;
         this.PosY = y;
+        this.elementLeft = left;
+        this.elementRight = right;
+        this.elementAbove = above;
+        this.elementBelow = below;
         this.powerStatus = false;
         this.inputLeftStatus = false;
         this.inputRightStatus = false;
