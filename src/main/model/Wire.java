@@ -4,16 +4,35 @@ package model;
 // "on" or "off" power status.
 public class Wire extends LogicElement {
     
+    // REQUIRES: LogicElements must be a LogicElement or null (no logic element in that direction)
     // EFFECTS: creates a wire with power status set to "off" and x and y positions set to given x and y values
     //          and sets logic elements to the left, right, above and below. Also all inputs to "off"
     public Wire(int x, int y, LogicElement left, LogicElement right, LogicElement above, LogicElement below) {
-        // STUB
+        this.PosX = x;
+        this.PosY = y;
+        this.elementLeft = left;
+        this.elementRight = right;
+        this.elementAbove = above;
+        this.elementBelow = below;
+        this.powerStatus = false;
+        this.inputLeftStatus = false;
+        this.inputRightStatus = false;
+        this.inputAboveStatus = false;
+        this.inputBelowStatus = false;
     }
 
     // MODIFIES: this
     // EFFECTS: checks to see if any input are "on", if so turns power status "on" and calls outputLeft(),
     //          outputRight(), outputAbove(), outputBelow(),
     public void checkPowerStatus() {
-        // STUB
+        if (inputLeftStatus == true ||
+            inputRightStatus == true ||
+            inputAboveStatus == true ||
+            inputBelowStatus == true) {
+                outputLeft();
+                outputRight();
+                outputAbove();
+                outputBelow();
+            }
     }
 }

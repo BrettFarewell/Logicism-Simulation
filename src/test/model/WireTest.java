@@ -29,6 +29,10 @@ public class WireTest {
         assertEquals(orGate, wire.getRightElement());
         assertEquals(powerSource, wire.getAboveElement());
         assertEquals(null, wire.getBelowElement());
+        assertFalse(wire.getInputLeft());
+        assertFalse(wire.getInputRight());
+        assertFalse(wire.getInputAbove());
+        assertFalse(wire.getInputBelow());
         assertFalse(wire.getPowerStatus());
     }
 
