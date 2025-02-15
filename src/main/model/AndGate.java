@@ -26,6 +26,8 @@ public class AndGate extends LogicGate {
         if (inputLeftStatus == true && inputBelowStatus == true) {
             this.powerStatus = true;
             outputRight();
+        } else {
+            this.powerStatus = false;
         }
     }
 
