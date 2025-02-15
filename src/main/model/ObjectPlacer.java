@@ -38,4 +38,19 @@ public class ObjectPlacer {
     public void moveDown() {
         // STUB
     }
+
+    // EFFECT: gets x position
+    public int getPosX() {
+        return -1; //STUB
+    }
+
+    // EFFECT: gets y position
+    public int getPosY() {
+        return -1; //STUB
+    }
+
+    // EFFECT: gets scenario
+    public Scenario getScenario() {
+        return null; //STUB
+    }
 }
