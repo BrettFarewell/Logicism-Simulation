@@ -22,7 +22,11 @@ public abstract class LogicElement {
     // MODIFIES: this
     // EFFECT: resets logic element back to orginal state, with all inputs powered off and power status off
     public void resetLogicElement() {
-        // STUB
+        this.inputLeftStatus = false;
+        this.inputRightStatus = false;
+        this.inputAboveStatus = false;
+        this.inputBelowStatus = false;
+        this.powerStatus = false;
     }
 
     // MODIFIES: this
