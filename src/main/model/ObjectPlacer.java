@@ -20,10 +20,10 @@ public class ObjectPlacer {
     // EFFECT: move object selector right 1 charcter if x position < scenario width (+1 to x position).
     //         If x position = scenario.getScreenWidth(), do nothing
     public void moveRight() {
-        if (posX < scenario.getScreenWidth()) {
+        if (posX < scenario.getScreenWidth() - 1) {
             this.posX++;
         } else {
-            this.posX = scenario.getScreenWidth();
+            this.posX = scenario.getScreenWidth() - 1;
         }
     }
 
@@ -53,10 +53,10 @@ public class ObjectPlacer {
     // EFFECT: move object selector down 1 charcter if y position < scenario height (+ 1 to y position).
     //         If y position = scenario.getScreenHeight(), do nothing
     public void moveDown() {
-        if (posY < scenario.getScreenHeight()) {
+        if (posY < scenario.getScreenHeight() - 1) {
             this.posY++;
         } else {
-            this.posY = scenario.getScreenHeight();
+            this.posY = scenario.getScreenHeight() - 1;
         }
     }
 
