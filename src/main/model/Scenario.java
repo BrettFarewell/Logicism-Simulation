@@ -19,7 +19,7 @@ public class Scenario {
         this.name = name;
     }
 
-    // REQUIRES: c == a, o, p, w, l, or s and 0 <= x <= SCREEN_WIDTH and 0 <= y <= SCREEN_HEIGHT
+    // REQUIRES: c == a, o, p, w, l, s, or d and 0 <= x <= SCREEN_WIDTH and 0 <= y <= SCREEN_HEIGHT
     // MODIFIES: this
     // EFFECT: take input character c
     //              if c == a, create an AndGate at x, y through addAndGate()
@@ -28,21 +28,48 @@ public class Scenario {
     //              if c == w, create a Wire at x, y through addWire(x, y)
     //              if c == l, create a LightOutput at x, y through addLightOutput(x, y)
     //              if c == s, create a SoundOutput at x, y through addSoundOutput(x, y)
+    //              if c == d, delete logic element at x, y through deleteElement(x, y)
     public void addLogicElement(String c, int x, int y) {
-        if (c == "a") {
+        if (c.equals("a")) {
             addAndGate(x, y);
-        } else if (c == "o") {
+        } else if (c.equals("o")) {
             addOrGate(x, y);
-        } else if (c == "p") {
+        } else if (c.equals("p")) {
             addPowerSource(x, y);
-        } else if (c == "w") {
+        } else if (c.equals("w")) {
             addWire(x, y);
-        } else if (c == "l") {
+        } else if (c.equals("l")) {
             addLightOutput(x, y);
-        } else {
+        } else if (c.equals("s")) {
             addSoundOutput(x, y);
+        } else {
+            deleteElement(x, y);
         }
         
+    }
+
+    // REQUIRES: 0 <= x <= SCREEN_WIDTH and 0 <= y <= SCREEN_HEIGHT
+    // MODIFIES: this
+    // EFFECT: deletes element at position x and y in the logic element grid (replaces with null),
+    //         also removes the element from the elements around it
+    public void deleteElement(int x, int y) {
+        logicElementGrid[y][x] = null;
+        if (x != 0 && logicElementGrid[y][x - 1] != null) {
+            LogicElement left = logicElementGrid[y][x - 1];
+            left.setRightElement(null);
+        }
+        if (x != SCREEN_WIDTH - 1 && logicElementGrid[y][x + 1] != null) {
+            LogicElement right = logicElementGrid[y][x + 1];
+            right.setLeftElement(null);
+        }
+        if (y != 0 && logicElementGrid[y - 1][x] != null) {
+            LogicElement above = logicElementGrid[y - 1][x];
+            above.setBelowElement(null);
+        }
+        if (y != SCREEN_HEIGHT - 1 && logicElementGrid[y + 1][x] != null) {
+            LogicElement below = logicElementGrid[y + 1][x];
+            below.setAboveElement(null);
+        }
     }
 
     // REQUIRES: 0 <= x <= SCREEN_WIDTH and 0 <= y <= SCREEN_HEIGHT

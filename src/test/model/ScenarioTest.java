@@ -43,6 +43,8 @@ public class ScenarioTest {
         assertTrue(scenario.getLogicElementGrid()[0][49] instanceof LightOutput);
         scenario.addLogicElement("s", 30, 15);
         assertTrue(scenario.getLogicElementGrid()[15][30] instanceof SoundOutput);
+        scenario.addLogicElement("d", 30, 15);
+        assertNull(scenario.getLogicElementGrid()[15][30]);
     }
 
     @Test
@@ -71,6 +73,25 @@ public class ScenarioTest {
     }
 
     @Test
+    void addThenDeleteAndGateNoElementsAroundTests() {
+        scenario.addAndGate(20, 10);
+        LogicElement andGate1 = scenario.getLogicElementGrid()[10][20];
+        assertTrue(andGate1 instanceof AndGate);
+        scenario.deleteElement(20, 10);
+        assertNull(scenario.getLogicElementGrid()[10][20]);
+        scenario.addAndGate(0, 0);
+        LogicElement andGate2 = scenario.getLogicElementGrid()[0][0];
+        assertTrue(andGate2 instanceof AndGate);
+        scenario.deleteElement(0, 0);
+        assertNull(scenario.getLogicElementGrid()[0][0]);
+        scenario.addAndGate(49, 19);
+        LogicElement andGate3 = scenario.getLogicElementGrid()[19][49];
+        assertTrue(andGate3 instanceof AndGate);
+        scenario.deleteElement(49, 19);
+        assertNull(scenario.getLogicElementGrid()[19][49]);
+    }
+
+    @Test
     void addAndGateAllPossibleElementsAroundMiddleTests() {
         scenario.getLogicElementGrid()[10][19] = new Wire(19, 10, null, null, null, null);
         scenario.getLogicElementGrid()[10][21] = new AndGate(21, 10, null, null, null, null);
@@ -89,6 +110,24 @@ public class ScenarioTest {
         assertEquals(andGate1, scenario.getLogicElementGrid()[9][20].getBelowElement());
         assertEquals(scenario.getLogicElementGrid()[11][20], andGate1.getBelowElement());
         assertEquals(andGate1, scenario.getLogicElementGrid()[11][20].getAboveElement());
+    }
+
+    @Test
+    void addAndGateThenDeleteAllPossibleElementsAroundMiddleTests() {
+        scenario.getLogicElementGrid()[10][19] = new Wire(19, 10, null, null, null, null);
+        scenario.getLogicElementGrid()[10][21] = new AndGate(21, 10, null, null, null, null);
+        scenario.getLogicElementGrid()[9][20] = new PowerSource(20, 9, null,
+                                                            null, null, null);
+        scenario.getLogicElementGrid()[11][20] = new LightOutput(20, 11, null,
+                                                            null, null, null);
+        scenario.addAndGate(20, 10);
+        LogicElement andGate1 = scenario.getLogicElementGrid()[10][20];
+        assertTrue(andGate1 instanceof AndGate);
+        scenario.deleteElement(20, 10);
+        assertNull(scenario.getLogicElementGrid()[10][19].getRightElement());
+        assertNull(scenario.getLogicElementGrid()[10][21].getLeftElement());
+        assertNull(scenario.getLogicElementGrid()[9][20].getBelowElement());
+        assertNull(scenario.getLogicElementGrid()[11][20].getAboveElement());
     }
 
     @Test
