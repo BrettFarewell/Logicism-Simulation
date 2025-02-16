@@ -19,6 +19,18 @@ public class Scenario {
         this.name = name;
     }
 
+    // MODIFIES: this
+    // EFFECT: finds all power sources and starts the logic circuit by calling checkPowerStatus() on all power sources
+    public void runScenario() {
+        // STUB
+    }
+
+    // MODIFIES: this
+    // EFFECT: resets all non-power sources to be powered off and all inputs to be powered off
+    public void resetScenario() {
+        // STUB
+    }
+
     // REQUIRES: c == a, o, p, w, l, s, or d and 0 <= x <= SCREEN_WIDTH and 0 <= y <= SCREEN_HEIGHT
     // MODIFIES: this
     // EFFECT: take input character c
