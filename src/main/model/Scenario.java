@@ -28,16 +28,16 @@ public class Scenario {
     //              if c == w, create a Wire at x, y through addWire(x, y)
     //              if c == l, create a LightOutput at x, y through addLightOutput(x, y)
     //              if c == s, create a SoundOutput at x, y through addSoundOutput(x, y)
-    public void addLogicElement(char c, int x, int y) {
-        if (c == 'a') {
+    public void addLogicElement(String c, int x, int y) {
+        if (c == "a") {
             addAndGate(x, y);
-        } else if (c == 'o') {
+        } else if (c == "o") {
             addOrGate(x, y);
-        } else if (c == 'p') {
+        } else if (c == "p") {
             addPowerSource(x, y);
-        } else if (c == 'w') {
+        } else if (c == "w") {
             addWire(x, y);
-        } else if (c == 'l') {
+        } else if (c == "l") {
             addLightOutput(x, y);
         } else {
             addSoundOutput(x, y);

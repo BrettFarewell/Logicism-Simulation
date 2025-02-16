@@ -31,17 +31,17 @@ public class ScenarioTest {
 
     @Test
     void addLogicElementTests() {
-        scenario.addLogicElement('a', 20, 10);
+        scenario.addLogicElement("a", 20, 10);
         assertTrue(scenario.getLogicElementGrid()[10][20] instanceof AndGate);
-        scenario.addLogicElement('o', 0, 0);
+        scenario.addLogicElement("o", 0, 0);
         assertTrue(scenario.getLogicElementGrid()[0][0] instanceof OrGate);
-        scenario.addLogicElement('p', 49, 19);
+        scenario.addLogicElement("p", 49, 19);
         assertTrue(scenario.getLogicElementGrid()[19][49] instanceof PowerSource);
-        scenario.addLogicElement('w', 0, 19);
+        scenario.addLogicElement("w", 0, 19);
         assertTrue(scenario.getLogicElementGrid()[19][0] instanceof Wire);
-        scenario.addLogicElement('l', 49, 0);
+        scenario.addLogicElement("l", 49, 0);
         assertTrue(scenario.getLogicElementGrid()[0][49] instanceof LightOutput);
-        scenario.addLogicElement('s', 30, 15);
+        scenario.addLogicElement("s", 30, 15);
         assertTrue(scenario.getLogicElementGrid()[15][30] instanceof SoundOutput);
     }
 
