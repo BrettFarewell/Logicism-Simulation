@@ -37,6 +37,7 @@ public class ScenarioTest {
         scenario.addWire(21, 10);
         LogicElement wire2 = scenario.getLogicElementGrid()[10][21];
         scenario.addWire(20, 9);
+        scenario.runScenario();
         assertTrue(wire1.powerStatus);
         assertTrue(wire2.powerStatus);
         assertTrue(wire1.inputRightStatus);
