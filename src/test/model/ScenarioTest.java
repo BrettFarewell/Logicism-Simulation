@@ -26,6 +26,7 @@ public class ScenarioTest {
         assertTrue(scenario.getWires().isEmpty());
         assertTrue(scenario.getOutputElements().isEmpty());
         assertTrue(scenario.getPowerSources().isEmpty());
+        assertEquals("Scenario1", scenario.getName());
     }
 
     @Test
@@ -34,12 +35,12 @@ public class ScenarioTest {
         assertTrue(scenario.getLogicElementGrid()[10][20] instanceof AndGate);
         scenario.addLogicElement('o', 0, 0);
         assertTrue(scenario.getLogicElementGrid()[0][0] instanceof OrGate);
-        scenario.addLogicElement('p', 50, 20);
-        assertTrue(scenario.getLogicElementGrid()[20][50] instanceof PowerSource);
-        scenario.addLogicElement('w', 0, 20);
-        assertTrue(scenario.getLogicElementGrid()[20][0] instanceof Wire);
-        scenario.addLogicElement('l', 50, 0);
-        assertTrue(scenario.getLogicElementGrid()[0][50] instanceof LightOutput);
+        scenario.addLogicElement('p', 49, 19);
+        assertTrue(scenario.getLogicElementGrid()[19][49] instanceof PowerSource);
+        scenario.addLogicElement('w', 0, 19);
+        assertTrue(scenario.getLogicElementGrid()[19][0] instanceof Wire);
+        scenario.addLogicElement('l', 49, 0);
+        assertTrue(scenario.getLogicElementGrid()[0][49] instanceof LightOutput);
         scenario.addLogicElement('s', 30, 15);
         assertTrue(scenario.getLogicElementGrid()[15][30] instanceof SoundOutput);
     }
@@ -60,8 +61,8 @@ public class ScenarioTest {
         assertNull(andGate2.getRightElement());
         assertNull(andGate2.getAboveElement());
         assertNull(andGate2.getBelowElement());
-        scenario.addAndGate(50, 20);
-        LogicElement andGate3 = scenario.getLogicElementGrid()[20][50];
+        scenario.addAndGate(49, 19);
+        LogicElement andGate3 = scenario.getLogicElementGrid()[19][49];
         assertTrue(andGate3 instanceof AndGate);
         assertNull(andGate3.getLeftElement());
         assertNull(andGate3.getRightElement());
@@ -107,16 +108,16 @@ public class ScenarioTest {
 
     @Test
     void addAndGateAllPossibleElementsAroundBottomRightTests() {
-        scenario.getLogicElementGrid()[19][50] = new Wire(50, 19, null, null, null, null);
-        scenario.getLogicElementGrid()[20][49] = new AndGate(49, 20, null, null, null, null);
-        scenario.addAndGate(50, 20);
-        LogicElement andGate3 = scenario.getLogicElementGrid()[20][50];
+        scenario.getLogicElementGrid()[18][49] = new Wire(49, 18, null, null, null, null);
+        scenario.getLogicElementGrid()[19][48] = new AndGate(48, 19, null, null, null, null);
+        scenario.addAndGate(49, 19);
+        LogicElement andGate3 = scenario.getLogicElementGrid()[19][49];
         assertTrue(andGate3 instanceof AndGate);
-        assertEquals(scenario.getLogicElementGrid()[20][49], andGate3.getLeftElement());
-        assertEquals(andGate3, scenario.getLogicElementGrid()[20][49].getRightElement());
+        assertEquals(scenario.getLogicElementGrid()[19][48], andGate3.getLeftElement());
+        assertEquals(andGate3, scenario.getLogicElementGrid()[19][48].getRightElement());
         assertNull(andGate3.getRightElement());
-        assertEquals(scenario.getLogicElementGrid()[19][50], andGate3.getAboveElement());
-        assertEquals(andGate3, scenario.getLogicElementGrid()[19][50].getBelowElement());
+        assertEquals(scenario.getLogicElementGrid()[18][49], andGate3.getAboveElement());
+        assertEquals(andGate3, scenario.getLogicElementGrid()[18][49].getBelowElement());
         assertNull(andGate3.getBelowElement());
     }
 
@@ -136,8 +137,8 @@ public class ScenarioTest {
         assertNull(orGate2.getRightElement());
         assertNull(orGate2.getAboveElement());
         assertNull(orGate2.getBelowElement());
-        scenario.addOrGate(50, 20);
-        LogicElement orGate3 = scenario.getLogicElementGrid()[20][50];
+        scenario.addOrGate(49, 19);
+        LogicElement orGate3 = scenario.getLogicElementGrid()[19][49];
         assertTrue(orGate3 instanceof OrGate);
         assertNull(orGate3.getLeftElement());
         assertNull(orGate3.getRightElement());
@@ -183,16 +184,16 @@ public class ScenarioTest {
 
     @Test
     void addOrGateAllPossibleElementsAroundBottomRightTests() {
-        scenario.getLogicElementGrid()[19][50] = new Wire(50, 19, null, null, null, null);
-        scenario.getLogicElementGrid()[20][49] = new OrGate(49, 20, null, null, null, null);
-        scenario.addOrGate(50, 20);
-        LogicElement orGate3 = scenario.getLogicElementGrid()[20][50];
+        scenario.getLogicElementGrid()[18][49] = new Wire(49, 18, null, null, null, null);
+        scenario.getLogicElementGrid()[19][48] = new OrGate(48, 19, null, null, null, null);
+        scenario.addOrGate(49, 19);
+        LogicElement orGate3 = scenario.getLogicElementGrid()[19][49];
         assertTrue(orGate3 instanceof OrGate);
-        assertEquals(scenario.getLogicElementGrid()[20][49], orGate3.getLeftElement());
-        assertEquals(orGate3, scenario.getLogicElementGrid()[20][49].getRightElement());
+        assertEquals(scenario.getLogicElementGrid()[19][48], orGate3.getLeftElement());
+        assertEquals(orGate3, scenario.getLogicElementGrid()[19][48].getRightElement());
         assertNull(orGate3.getRightElement());
-        assertEquals(scenario.getLogicElementGrid()[19][50], orGate3.getAboveElement());
-        assertEquals(orGate3, scenario.getLogicElementGrid()[19][50].getBelowElement());
+        assertEquals(scenario.getLogicElementGrid()[18][49], orGate3.getAboveElement());
+        assertEquals(orGate3, scenario.getLogicElementGrid()[18][49].getBelowElement());
         assertNull(orGate3.getBelowElement());
     }
 
@@ -212,8 +213,8 @@ public class ScenarioTest {
         assertNull(wireGate2.getRightElement());
         assertNull(wireGate2.getAboveElement());
         assertNull(wireGate2.getBelowElement());
-        scenario.addWire(50, 20);
-        LogicElement wireGate3 = scenario.getLogicElementGrid()[20][50];
+        scenario.addWire(49, 19);
+        LogicElement wireGate3 = scenario.getLogicElementGrid()[19][49];
         assertTrue(wireGate3 instanceof Wire);
         assertNull(wireGate3.getLeftElement());
         assertNull(wireGate3.getRightElement());
@@ -259,16 +260,16 @@ public class ScenarioTest {
 
     @Test
     void addWireGateAllPossibleElementsAroundBottomRightTests() {
-        scenario.getLogicElementGrid()[19][50] = new Wire(50, 19, null, null, null, null);
-        scenario.getLogicElementGrid()[20][49] = new Wire(49, 20, null, null, null, null);
-        scenario.addWire(50, 20);
-        LogicElement wireGate3 = scenario.getLogicElementGrid()[20][50];
+        scenario.getLogicElementGrid()[18][49] = new Wire(49, 18, null, null, null, null);
+        scenario.getLogicElementGrid()[19][48] = new Wire(48, 19, null, null, null, null);
+        scenario.addWire(49, 19);
+        LogicElement wireGate3 = scenario.getLogicElementGrid()[19][49];
         assertTrue(wireGate3 instanceof Wire);
-        assertEquals(scenario.getLogicElementGrid()[20][49], wireGate3.getLeftElement());
-        assertEquals(wireGate3, scenario.getLogicElementGrid()[20][49].getRightElement());
+        assertEquals(scenario.getLogicElementGrid()[19][48], wireGate3.getLeftElement());
+        assertEquals(wireGate3, scenario.getLogicElementGrid()[19][48].getRightElement());
         assertNull(wireGate3.getRightElement());
-        assertEquals(scenario.getLogicElementGrid()[19][50], wireGate3.getAboveElement());
-        assertEquals(wireGate3, scenario.getLogicElementGrid()[19][50].getBelowElement());
+        assertEquals(scenario.getLogicElementGrid()[18][49], wireGate3.getAboveElement());
+        assertEquals(wireGate3, scenario.getLogicElementGrid()[18][49].getBelowElement());
         assertNull(wireGate3.getBelowElement());
     }
 
@@ -288,8 +289,8 @@ public class ScenarioTest {
         assertNull(powerSourceGate2.getRightElement());
         assertNull(powerSourceGate2.getAboveElement());
         assertNull(powerSourceGate2.getBelowElement());
-        scenario.addPowerSource(50, 20);
-        LogicElement powerSourceGate3 = scenario.getLogicElementGrid()[20][50];
+        scenario.addPowerSource(49, 19);
+        LogicElement powerSourceGate3 = scenario.getLogicElementGrid()[19][49];
         assertTrue(powerSourceGate3 instanceof PowerSource);
         assertNull(powerSourceGate3.getLeftElement());
         assertNull(powerSourceGate3.getRightElement());
@@ -335,16 +336,16 @@ public class ScenarioTest {
 
     @Test
     void addPowerSourceGateAllPossibleElementsAroundBottomRightTests() {
-        scenario.getLogicElementGrid()[19][50] = new PowerSource(50, 19, null, null, null, null);
-        scenario.getLogicElementGrid()[20][49] = new PowerSource(49, 20, null, null, null, null);
-        scenario.addPowerSource(50, 20);
-        LogicElement powerSourceGate3 = scenario.getLogicElementGrid()[20][50];
+        scenario.getLogicElementGrid()[18][49] = new PowerSource(49, 18, null, null, null, null);
+        scenario.getLogicElementGrid()[19][48] = new PowerSource(48, 19, null, null, null, null);
+        scenario.addPowerSource(49, 19);
+        LogicElement powerSourceGate3 = scenario.getLogicElementGrid()[19][49];
         assertTrue(powerSourceGate3 instanceof PowerSource);
-        assertEquals(scenario.getLogicElementGrid()[20][49], powerSourceGate3.getLeftElement());
-        assertEquals(powerSourceGate3, scenario.getLogicElementGrid()[20][49].getRightElement());
+        assertEquals(scenario.getLogicElementGrid()[19][48], powerSourceGate3.getLeftElement());
+        assertEquals(powerSourceGate3, scenario.getLogicElementGrid()[19][48].getRightElement());
         assertNull(powerSourceGate3.getRightElement());
-        assertEquals(scenario.getLogicElementGrid()[19][50], powerSourceGate3.getAboveElement());
-        assertEquals(powerSourceGate3, scenario.getLogicElementGrid()[19][50].getBelowElement());
+        assertEquals(scenario.getLogicElementGrid()[18][49], powerSourceGate3.getAboveElement());
+        assertEquals(powerSourceGate3, scenario.getLogicElementGrid()[18][49].getBelowElement());
         assertNull(powerSourceGate3.getBelowElement());
     }
 
@@ -364,8 +365,8 @@ public class ScenarioTest {
         assertNull(lightOutputGate2.getRightElement());
         assertNull(lightOutputGate2.getAboveElement());
         assertNull(lightOutputGate2.getBelowElement());
-        scenario.addLightOutput(50, 20);
-        LogicElement lightOutputGate3 = scenario.getLogicElementGrid()[20][50];
+        scenario.addLightOutput(49, 19);
+        LogicElement lightOutputGate3 = scenario.getLogicElementGrid()[19][49];
         assertTrue(lightOutputGate3 instanceof LightOutput);
         assertNull(lightOutputGate3.getLeftElement());
         assertNull(lightOutputGate3.getRightElement());
@@ -411,16 +412,16 @@ public class ScenarioTest {
 
     @Test
     void addLightOutputGateAllPossibleElementsAroundBottomRightTests() {
-        scenario.getLogicElementGrid()[19][50] = new LightOutput(50, 19, null, null, null, null);
-        scenario.getLogicElementGrid()[20][49] = new LightOutput(49, 20, null, null, null, null);
-        scenario.addLightOutput(50, 20);
-        LogicElement lightOutputGate3 = scenario.getLogicElementGrid()[20][50];
+        scenario.getLogicElementGrid()[18][49] = new LightOutput(49, 18, null, null, null, null);
+        scenario.getLogicElementGrid()[19][48] = new LightOutput(48, 19, null, null, null, null);
+        scenario.addLightOutput(49, 19);
+        LogicElement lightOutputGate3 = scenario.getLogicElementGrid()[19][49];
         assertTrue(lightOutputGate3 instanceof LightOutput);
-        assertEquals(scenario.getLogicElementGrid()[20][49], lightOutputGate3.getLeftElement());
-        assertEquals(lightOutputGate3, scenario.getLogicElementGrid()[20][49].getRightElement());
+        assertEquals(scenario.getLogicElementGrid()[19][48], lightOutputGate3.getLeftElement());
+        assertEquals(lightOutputGate3, scenario.getLogicElementGrid()[19][48].getRightElement());
         assertNull(lightOutputGate3.getRightElement());
-        assertEquals(scenario.getLogicElementGrid()[19][50], lightOutputGate3.getAboveElement());
-        assertEquals(lightOutputGate3, scenario.getLogicElementGrid()[19][50].getBelowElement());
+        assertEquals(scenario.getLogicElementGrid()[18][49], lightOutputGate3.getAboveElement());
+        assertEquals(lightOutputGate3, scenario.getLogicElementGrid()[18][49].getBelowElement());
         assertNull(lightOutputGate3.getBelowElement());
     }
 
@@ -440,8 +441,8 @@ public class ScenarioTest {
         assertNull(soundOutputGate2.getRightElement());
         assertNull(soundOutputGate2.getAboveElement());
         assertNull(soundOutputGate2.getBelowElement());
-        scenario.addSoundOutput(50, 20);
-        LogicElement soundOutputGate3 = scenario.getLogicElementGrid()[20][50];
+        scenario.addSoundOutput(49, 19);
+        LogicElement soundOutputGate3 = scenario.getLogicElementGrid()[19][49];
         assertTrue(soundOutputGate3 instanceof SoundOutput);
         assertNull(soundOutputGate3.getLeftElement());
         assertNull(soundOutputGate3.getRightElement());
@@ -487,16 +488,16 @@ public class ScenarioTest {
 
     @Test
     void addsoundOutputGateAllPossibleElementsAroundBottomRightTests() {
-        scenario.getLogicElementGrid()[19][50] = new SoundOutput(50, 19, null, null, null, null);
-        scenario.getLogicElementGrid()[20][49] = new SoundOutput(49, 20, null, null, null, null);
-        scenario.addSoundOutput(50, 20);
-        LogicElement soundOutputGate3 = scenario.getLogicElementGrid()[20][50];
+        scenario.getLogicElementGrid()[18][49] = new SoundOutput(49, 18, null, null, null, null);
+        scenario.getLogicElementGrid()[19][48] = new SoundOutput(48, 19, null, null, null, null);
+        scenario.addSoundOutput(49, 19);
+        LogicElement soundOutputGate3 = scenario.getLogicElementGrid()[19][49];
         assertTrue(soundOutputGate3 instanceof SoundOutput);
-        assertEquals(scenario.getLogicElementGrid()[20][49], soundOutputGate3.getLeftElement());
-        assertEquals(soundOutputGate3, scenario.getLogicElementGrid()[20][49].getRightElement());
+        assertEquals(scenario.getLogicElementGrid()[19][48], soundOutputGate3.getLeftElement());
+        assertEquals(soundOutputGate3, scenario.getLogicElementGrid()[19][48].getRightElement());
         assertNull(soundOutputGate3.getRightElement());
-        assertEquals(scenario.getLogicElementGrid()[19][50], soundOutputGate3.getAboveElement());
-        assertEquals(soundOutputGate3, scenario.getLogicElementGrid()[19][50].getBelowElement());
+        assertEquals(scenario.getLogicElementGrid()[18][49], soundOutputGate3.getAboveElement());
+        assertEquals(soundOutputGate3, scenario.getLogicElementGrid()[18][49].getBelowElement());
         assertNull(soundOutputGate3.getBelowElement());
     }
 
@@ -522,8 +523,8 @@ public class ScenarioTest {
                                                             null, null, null);
         scenario.getLogicElementGrid()[1][0] = new Wire(0, 1, null, null, null, null);
         scenario.getLogicElementGrid()[0][1] = new OrGate(1, 0, null, null, null, null);
-        scenario.getLogicElementGrid()[19][50] = new Wire(50, 19, null, null, null, null);
-        scenario.getLogicElementGrid()[20][49] = new AndGate(49, 20, null, null, null, null);
+        scenario.getLogicElementGrid()[18][49] = new Wire(49, 18, null, null, null, null);
+        scenario.getLogicElementGrid()[19][48] = new AndGate(48, 19, null, null, null, null);
         assertEquals(3, scenario.getLogicGates().size());
         assertEquals(3, scenario.getWires().size());
         assertEquals(2, scenario.getOutputElements().size());
