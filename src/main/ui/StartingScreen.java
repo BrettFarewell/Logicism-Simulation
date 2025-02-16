@@ -25,7 +25,6 @@ public class StartingScreen {
         startMenu();
     }
 
-    // MODIFIES: this
     // EFFECTS: sets up the start menu, displays user options, and takes and handles user's input
     //          through handleInputMenu()
     public void startMenu() {
@@ -47,7 +46,6 @@ public class StartingScreen {
         System.out.println(divider);
     }
 
-    // MODIFIES: this
     // EFFECTS: handles user input in menu:
     //              if q - quit application
     //              if n - create new scenario
@@ -188,6 +186,7 @@ public class StartingScreen {
         return this.scenarios;
     }
 
+    // MODIFIES: this
     // EFFECT: quit the current application and say goodbye message
     public void quitLogicCircuitBuilder() {
         System.out.println(divider);
