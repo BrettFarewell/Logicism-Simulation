@@ -37,6 +37,27 @@ public class WireTest {
     }
 
     @Test
+    void resetLogicElement() {
+        wire.resetLogicElement();
+        assertFalse(wire.getInputLeft());
+        assertFalse(wire.getInputRight());
+        assertFalse(wire.getInputAbove());
+        assertFalse(wire.getInputBelow());
+        assertFalse(wire.getPowerStatus());
+        wire.setInputLeft(true);
+        wire.setInputRight(true);
+        wire.setInputAbove(true);
+        wire.setInputBelow(true);
+        wire.setPowerStatus(true);
+        wire.resetLogicElement();
+        assertFalse(wire.getInputLeft());
+        assertFalse(wire.getInputRight());
+        assertFalse(wire.getInputAbove());
+        assertFalse(wire.getInputBelow());
+        assertFalse(wire.getPowerStatus());
+    }
+
+    @Test
     void settersAndGettersTest() {
         wire.setLeftElement(null);
         wire.setRightElement(null);
