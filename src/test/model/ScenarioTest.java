@@ -30,6 +30,25 @@ public class ScenarioTest {
     }
 
     @Test
+    void runThenResetScenarioTest() {
+        scenario.addPowerSource(20, 10);
+        scenario.addWire(19, 10);
+        LogicElement wire1 = scenario.getLogicElementGrid()[10][19];
+        scenario.addWire(21, 10);
+        LogicElement wire2 = scenario.getLogicElementGrid()[10][21];
+        scenario.addWire(20, 9);
+        assertTrue(wire1.powerStatus);
+        assertTrue(wire2.powerStatus);
+        assertTrue(wire1.inputRightStatus);
+        assertTrue(wire2.inputLeftStatus);
+        scenario.resetScenario();
+        assertFalse(wire1.powerStatus);
+        assertFalse(wire2.powerStatus);
+        assertFalse(wire1.inputRightStatus);
+        assertFalse(wire2.inputLeftStatus);
+    }
+
+    @Test
     void addLogicElementTests() {
         scenario.addLogicElement("a", 20, 10);
         assertTrue(scenario.getLogicElementGrid()[10][20] instanceof AndGate);
