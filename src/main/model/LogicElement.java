@@ -20,6 +20,12 @@ public abstract class LogicElement {
     protected boolean powerStatus;
 
     // MODIFIES: this
+    // EFFECT: resets logic element back to orginal state, with all inputs powered off and power status off
+    public void resetLogicElement() {
+        // STUB
+    }
+
+    // MODIFIES: this
     // EFFECTS: set the logic element that is to the left
     public void setLeftElement(LogicElement logicElement) {
         this.elementLeft = logicElement;
