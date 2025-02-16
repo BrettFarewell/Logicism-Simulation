@@ -39,7 +39,7 @@ public class Scenario {
             addWire(x, y);
         } else if (c == 'l') {
             addLightOutput(x, y);
-        } else if (c == 's') {
+        } else {
             addSoundOutput(x, y);
         }
         
