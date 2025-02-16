@@ -8,8 +8,8 @@ public class Wire extends LogicElement {
     // EFFECTS: creates a wire with power status set to "off" and x and y positions set to given x and y values
     //          and sets logic elements to the left, right, above and below. Also all inputs to "off"
     public Wire(int x, int y, LogicElement left, LogicElement right, LogicElement above, LogicElement below) {
-        this.PosX = x;
-        this.PosY = y;
+        this.posX = x;
+        this.posY = y;
         this.elementLeft = left;
         this.elementRight = right;
         this.elementAbove = above;
@@ -25,10 +25,10 @@ public class Wire extends LogicElement {
     // EFFECTS: checks to see if any input are "on", if so turns power status "on" and calls outputLeft(),
     //          outputRight(), outputAbove(), outputBelow(),
     public void checkPowerStatus() {
-        if (inputLeftStatus == true ||
-            inputRightStatus == true ||
-            inputAboveStatus == true ||
-            inputBelowStatus == true) {
+        if (inputLeftStatus == true
+                || inputRightStatus == true
+                || inputAboveStatus == true
+                || inputBelowStatus == true) {
             this.powerStatus = true;
             outputLeft();
             outputRight();

@@ -7,8 +7,8 @@ package model;
 // that are to above, below, right, and left of it in the scenario
 public abstract class LogicElement {
 
-    protected int PosX;
-    protected int PosY;
+    protected int posX;
+    protected int posY;
     protected LogicElement elementLeft;
     protected LogicElement elementRight;
     protected LogicElement elementAbove;
@@ -153,12 +153,12 @@ public abstract class LogicElement {
 
     // EFFECTS: gets x position
     public int getPosX() {
-        return this.PosX;
+        return this.posX;
     }
 
     // EFFECTS: gets y position
     public int getPosY() {
-        return this.PosY;
+        return this.posY;
     }
 
     // EFFECTS: get left input status for testing purposes

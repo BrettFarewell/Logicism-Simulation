@@ -7,8 +7,8 @@ public class OrGate extends LogicGate  {
     // EFFECTS: Creates an Or Gate at given x and y coordinates, with power status "off"
     //          and set logic elements to the left, right, above and below. Also all inputs to "off"
     public OrGate(int x, int y, LogicElement left, LogicElement right, LogicElement above, LogicElement below) {
-        this.PosX = x;
-        this.PosY = y;
+        this.posX = x;
+        this.posY = y;
         this.elementLeft = left;
         this.elementRight = right;
         this.elementAbove = above;

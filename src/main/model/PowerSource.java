@@ -7,8 +7,8 @@ public class PowerSource extends LogicElement {
     // EFFECTS: creates a power source where power will start from, sets x and y positions, and set logic elements
     //          to the left, right, above and below. Power status is set to "on" all inputs are set to "off"
     public PowerSource(int x, int y, LogicElement left, LogicElement right, LogicElement above, LogicElement below) {
-        this.PosX = x;
-        this.PosY = y;
+        this.posX = x;
+        this.posY = y;
         this.elementLeft = left;
         this.elementRight = right;
         this.elementAbove = above;
