@@ -96,7 +96,7 @@ public class StartingScreen {
         System.out.println("q - quit scenario selector");
     }
 
-    // EFFECTS: displays preview of current scenario in terminal by the following parameters
+    // EFFECTS: displays preview of current scenario in terminal
     public void scenarioPreview(Scenario scenario) {
         System.out.println(divider);
         System.out.println("Scenario Preview:");
