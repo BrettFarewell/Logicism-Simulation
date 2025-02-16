@@ -162,7 +162,7 @@ public class StartingScreen {
                 this.currentScenarioIndex--;
             }
         } else if (key.equals("s")) {
-        new ScenarioDisplayer(scenarios.get(currentScenarioIndex));
+            new ScenarioDisplayer(scenarios.get(currentScenarioIndex));
         } else if (key.equals("q")) {
             this.scenarioSelectorState = false;
         } else {
