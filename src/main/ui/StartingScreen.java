@@ -17,6 +17,7 @@ public class StartingScreen {
     
     // EFFECTS: initializes the terminal starting screen, sets the application state,
     //          and creates an empty list of scenarios with index set to 0. Brings up the start menu
+    //          Temporarily creates starting scenarios for users to select and adds them to scenarios list
     public StartingScreen() {
         this.applicationState = true;
         this.scenarios = new ArrayList<Scenario>();
@@ -80,6 +81,9 @@ public class StartingScreen {
         for (int i = 0; i < scenarios.size(); i++) {
             System.out.println("Scenario #" + (i + 1) + ": " + scenarios.get(i).getName());
         }
+        if (scenarios.isEmpty()) {
+            System.out.println("No scenarios to show");
+        }
     }
 
     // MODIFIES: this
@@ -112,6 +116,7 @@ public class StartingScreen {
         System.out.println("q - quit scenario selector");
     }
 
+    // REQUIRES: scenario != null
     // EFFECTS: displays preview of current scenario in terminal
     public void scenarioPreview(Scenario scenario) {
         System.out.println(divider);
@@ -205,7 +210,7 @@ public class StartingScreen {
     }
 
     // MODIFIES: this
-    // EFFECT: quit the current application and say goodbye message
+    // EFFECT: quit the current application and say a goodbye message
     public void quitLogicCircuitBuilder() {
         System.out.println(divider);
         System.out.println("Thanks for stopping by!");
@@ -214,7 +219,7 @@ public class StartingScreen {
     }
 
 
-
+    // MODIFIES: this
     // EFFECT: initializes a scenario with functioning AND and OR gates, with light output at the end
     //         and add it to the list of scenarios
     public void initializeScenario1() {
@@ -239,7 +244,7 @@ public class StartingScreen {
     }
     
     
-    
+    // MODIFIES: this
     // EFFECT: initializes a scenario with a functioning OR gate, but non-functioning AND Gate and sound output
     //         and add it to the list of scenarios
     public void initializeScenario2() {
