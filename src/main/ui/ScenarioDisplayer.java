@@ -109,7 +109,8 @@ public class ScenarioDisplayer {
         System.out.println("█ - Light Output: takes in power and lights up."
                 + " Light Outputs have inputs on all sides but no outputs");
         System.out.println("▒ - Sound Output: takes in power and plays sound."
-                + " Sound Outputs have inputs on all sides but no outputs");
+                + " Sound Outputs have inputs on all sides but no outputs."
+                + " Currently not functioning");
         System.out.println("All powered logic elements display green");
     }
 
