@@ -41,7 +41,8 @@ public class StartingScreen {
         System.out.println("Welcome to Logic Circuit Builder! You're one stop shop for building logic circuits!");
         System.out.println("Please select an option below");
         System.out.println("n - Create a new Logic Circuit Builder Scenario");
-        System.out.println("s - Select existing Logic Circuit Builder Scenario");
+        System.out.println("l - List all Logic Circuit Builder Scenarios");
+        System.out.println("s - Select from existing Logic Circuit Builder Scenarios");
         System.out.println("q - Quit Application :(");
         System.out.println(divider);
     }
@@ -56,12 +57,19 @@ public class StartingScreen {
             setupScenario();
         } else if (key.equals("s")) {
             scenarioSelector();
+        } else if (key.equals("l")) {
+            listScenarios();
         } else if (key.equals("q")) {
             quitLogicCircuitBuilder();
         } else {
             System.out.println(divider);
             System.out.println("Invalid response, please try again!");
         }
+    }
+
+    // EFFECT: lists all scenarios in the terminal with their name
+    public void listScenarios() {
+        // STUB
     }
 
     // MODIFIES: this
