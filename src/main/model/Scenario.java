@@ -40,7 +40,7 @@ public class Scenario {
         }
     }
 
-    // REQUIRES: c == a, o, p, w, l, s, or d and 0 <= x <= SCREEN_WIDTH and 0 <= y <= SCREEN_HEIGHT
+    // REQUIRES: c == a, o, p, w, l, s, or d and 0 <= x <= SCREEN_WIDTH - 1 and 0 <= y <= SCREEN_HEIGHT - 1
     // MODIFIES: this
     // EFFECT: take input character c
     //              if c == a, create an AndGate at x, y through addAndGate()
