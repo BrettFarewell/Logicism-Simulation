@@ -23,7 +23,6 @@ public class ScenarioDisplayer {
         scenarioMenu();
     }
 
-    // MODIFIES: this
     // EFFECT: sets up the scenario menu, displays user options, and takes and handles user's input
     //          through handleInputMenu()
     public void scenarioMenu() {
@@ -117,10 +116,10 @@ public class ScenarioDisplayer {
     // EFFECTS: renders scenario in terminal after the scenario run
     public void scenarioRender() {
         System.out.println(divider);
+        String green = "\u001B[32m";
+            String reset = "\u001B[0m";
         for (LogicElement[] row: scenario.getLogicElementGrid()) {
             String rowText = "";
-            String green = "\u001B[32m";
-            String reset = "\u001B[0m";
             for (LogicElement logicElement: row) {
                 if (logicElement != null && logicElement.getPowerStatus()) {
                     rowText = rowText +  green + findLogicElementSymbol(logicElement) + reset;
@@ -159,7 +158,6 @@ public class ScenarioDisplayer {
         }
     }
 
-    // MODIFIES: this
     // EFFECTS: handles user input in menu:
     //              if q - quit scenario
     //              if n - create new object (source, logic object, wire, output) and place it in scenario
@@ -205,6 +203,7 @@ public class ScenarioDisplayer {
         }
     }
 
+    // REQUIRES: objectPlacer != null
     // EFFECTS: allows users to preview where the current selected tile is when placing a new logic element in
     //          current scenario
     public void previewNewLogicElementInScenario(ObjectPlacer objectPlacer) {
@@ -244,6 +243,7 @@ public class ScenarioDisplayer {
         System.out.println("q - quit");
     }
 
+    // REQUIRES: objectPlacer != null
     // EFFECTS: handles the user's input when the new logic element menu
     //              if "a" is pressed, moves selected tile to the left (unless at left border)
     //              if "d" is pressed, moves selected tile to the right (unless at right border)
@@ -272,6 +272,7 @@ public class ScenarioDisplayer {
         }
     }
 
+    // REQUIRES: objectPlacer != null
     // MODIFIES: this
     // EFFECTS: allows users to select new logic element in currentlt selected tile location
     //          also allows users to delete existing elements
@@ -305,6 +306,7 @@ public class ScenarioDisplayer {
         System.out.println("d - Delete currently selected logic element");
     }
 
+    // REQUIRES: objectPlacer != null
     // MODIFIES: this
     // EFFECTS: handle user input for choosing a new logic element
     public void hanldeUserInputMenuChooseLogicelement(String key, ObjectPlacer objectPlacer) {
