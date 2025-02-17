@@ -117,7 +117,7 @@ public class ScenarioDisplayer {
     public void scenarioRender() {
         System.out.println(divider);
         String green = "\u001B[32m";
-            String reset = "\u001B[0m";
+        String reset = "\u001B[0m";
         for (LogicElement[] row: scenario.getLogicElementGrid()) {
             String rowText = "";
             for (LogicElement logicElement: row) {
