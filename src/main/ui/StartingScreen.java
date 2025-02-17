@@ -59,6 +59,9 @@ public class StartingScreen {
             scenarioSelector();
         } else if (key.equals("l")) {
             listScenarios();
+            System.out.println(divider);
+            System.out.println("Press enter to continue");
+            this.scanner.nextLine();
         } else if (key.equals("q")) {
             quitLogicCircuitBuilder();
         } else {
@@ -69,7 +72,10 @@ public class StartingScreen {
 
     // EFFECT: lists all scenarios in the terminal with their name
     public void listScenarios() {
-        // STUB
+        System.out.println(divider);
+        for (int i = 0; i < scenarios.size(); i++) {
+            System.out.println("Scenario #" + (i + 1) + ": " + scenarios.get(i).getName());
+        }
     }
 
     // MODIFIES: this
