@@ -22,6 +22,10 @@ public class StartingScreen {
         this.scenarios = new ArrayList<Scenario>();
         this.currentScenarioIndex = 0;
         this.scanner = new Scanner(System.in);
+
+        initializeScenario1();
+        initializeScenario2();
+        
         startMenu();
     }
 
@@ -207,5 +211,52 @@ public class StartingScreen {
         System.out.println("Thanks for stopping by!");
         System.out.println("Hope to see you soon!");
         this.applicationState = false;
+    }
+
+
+
+    // EFFECT: initializes a scenario with functioning AND and OR gates, with light output at the end
+    //         and add it to the list of scenarios
+    public void initializeScenario1() {
+        Scenario scenario = new Scenario("Functioning Circuit");
+        scenario.addPowerSource(5, 5);
+        scenario.addWire(6, 5);
+        scenario.addWire(7, 5);
+        scenario.addOrGate(8, 5);
+        scenario.addWire(9, 5);
+        scenario.addWire(9, 4);
+        scenario.addWire(8, 4);
+        scenario.addWire(8, 3);
+        scenario.addWire(6, 4);
+        scenario.addWire(6, 3);
+        scenario.addWire(6, 2);
+        scenario.addWire(7, 2);
+        scenario.addAndGate(8, 2);
+        scenario.addWire(9, 2);
+        scenario.addWire(10, 2);
+        scenario.addSoundOutput(11, 2);
+        scenarios.add(scenario);
+    }
+    
+    
+    
+    // EFFECT: initializes a scenario with a functioning OR gate, but non-functioning AND Gate and sound output
+    //         and add it to the list of scenarios
+    public void initializeScenario2() {
+        Scenario scenario = new Scenario("Non-Functioning Circuit");
+        scenario.addPowerSource(5, 5);
+        scenario.addWire(6, 5);
+        scenario.addWire(7, 5);
+        scenario.addOrGate(8, 5);
+        scenario.addWire(9, 5);
+        scenario.addWire(6, 4);
+        scenario.addWire(6, 3);
+        scenario.addWire(6, 2);
+        scenario.addWire(7, 2);
+        scenario.addAndGate(8, 2);
+        scenario.addWire(9, 2);
+        scenario.addWire(10, 2);
+        scenario.addLightOutput(11, 2);
+        scenarios.add(scenario);
     }
 }
