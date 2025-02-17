@@ -62,16 +62,16 @@ public class ObjectPlacer {
 
     // EFFECT: gets x position
     public int getPosX() {
-        return this.posX; //STUB
+        return this.posX;
     }
 
     // EFFECT: gets y position
     public int getPosY() {
-        return this.posY; //STUB
+        return this.posY;
     }
 
     // EFFECT: gets scenario
     public Scenario getScenario() {
-        return this.scenario; //STUB
+        return this.scenario;
     }
 }
