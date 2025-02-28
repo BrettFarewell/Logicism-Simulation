@@ -18,3 +18,6 @@ List of **User Stories**:
 - As a user, I want to be able to draw wires to interconnect logic gates, sources, and outputs and run them in real-time to create a functioning logic circuit.
 - As a user, I want to be able to select the OR gate, NOR gate, AND gate, NAND gate, NOT gate, XOR gate, or XNOR gate from a menu and then have the menu tell me what the gate does.
 - As a user, I want to have a light source and an audio source that plays a frequency as outputs and I want to be able to select the colour or frequency at which the output emits.
+
+- As a user, I want the option to save the current application state with the list of all scenarios when the I quit the application
+- As a user, I want the option to load a previously saved application state that contains a list of scenarios when the I start the application
