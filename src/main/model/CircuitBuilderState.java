@@ -17,7 +17,7 @@ public class CircuitBuilderState implements Writable {
 
     // MODIFIES: this
     // EFFECT: adds a scenario to the list of scenarios
-    public void addScenario() {
+    public void addScenario(Scenario scenario) {
         
     }
 
