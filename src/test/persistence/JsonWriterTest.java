@@ -1,6 +1,8 @@
-package persistance;
+package persistence;
 
 import model.*;
+import persistence.JsonReader;
+import persistence.JsonWriter;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -9,9 +11,6 @@ import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import persistance.JsonReader;
-import persistance.JsonWriter;
 
 public class JsonWriterTest extends JsonTest {
     CircuitBuilderState circuitBuilderState;

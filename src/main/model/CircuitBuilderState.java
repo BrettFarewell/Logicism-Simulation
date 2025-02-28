@@ -1,11 +1,11 @@
 package model;
 
-import persistance.Writable;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import org.json.JSONObject;
+
+import persistence.Writable;
 
 // Represents the state of the circuit builder application is currently in will all of the scenarios within
 public class CircuitBuilderState implements Writable {
