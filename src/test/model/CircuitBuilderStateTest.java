@@ -26,9 +26,11 @@ public class CircuitBuilderStateTest {
     void addScenariosTests() {
         circuitBuilderState.addScenario(scenario1);
         assertEquals(scenario1, circuitBuilderState.getScenarioList().get(0));
+        assertEquals(1 , circuitBuilderState.getScenarioList().size());
         circuitBuilderState.addScenario(scenario2);
         assertEquals(scenario1, circuitBuilderState.getScenarioList().get(0));
         assertEquals(scenario2, circuitBuilderState.getScenarioList().get(1));
+        assertEquals(2 , circuitBuilderState.getScenarioList().size());
     }
 
 }
