@@ -1,5 +1,6 @@
 package persistance;
 
+import model.CircuitBuilderState;
 import model.Scenario;
 
 import java.io.File;
@@ -15,13 +16,13 @@ public class JsonWriter {
     private PrintWriter writer;
     private String destination;
 
-    // ATTRIBUTION: Code structure based on JSONSerializationDemo
+    // ATTRIBUTION: Code structure based on JSONSerializationDemo JsonWriter class
     // EFFECTS: constructs writer to write to destination file
     public JsonWriter(String destination) {
         // STUB
     }
 
-    // ATTRIBUTION: Code structure based on JSONSerializationDemo
+    // ATTRIBUTION: Code structure based on JSONSerializationDemo JsonWriter class
     // MODIFIES: this
     // EFFECTS: opens writer; throws FileNotFoundException if destination file cannot
     // be opened for writing
@@ -29,21 +30,21 @@ public class JsonWriter {
         // STUB
     }
 
-    // ATTRIBUTION: Code structure based on JSONSerializationDemo
+    // ATTRIBUTION: Code structure based on JSONSerializationDemo JsonWriter class
     // MODIFIES: this
     // EFFECTS: writes JSON representation of workroom to file
-    public void write(Scenario scen) {
+    public void write(CircuitBuilderState circuitBuilderState) {
         // STUB
     }
 
-    // ATTRIBUTION: Code structure based on JSONSerializationDemo
+    // ATTRIBUTION: Code structure based on JSONSerializationDemo JsonWriter class
     // MODIFIES: this
     // EFFECTS: closes writer
     public void close() {
         // STUB
     }
 
-    // ATTRIBUTION: Code structure based on JSONSerializationDemo
+    // ATTRIBUTION: Code structure based on JSONSerializationDemo JsonWriter class
     // MODIFIES: this
     // EFFECTS: writes string to file
     private void saveToFile(String json) {
