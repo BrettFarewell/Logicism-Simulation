@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class StartingScreen {
     private boolean applicationState;
     private boolean scenarioSelectorState;
+    private CircuitBuilderState circuitBuilderState;
     private List<Scenario> scenarios;
     private int currentScenarioIndex;
     private Scanner scanner;
@@ -20,7 +21,8 @@ public class StartingScreen {
     //          Temporarily creates starting scenarios for users to select and adds them to scenarios list
     public StartingScreen() {
         this.applicationState = true;
-        this.scenarios = new ArrayList<Scenario>();
+        this.circuitBuilderState = new CircuitBuilderState();
+        scenarios = circuitBuilderState.getScenarioList();
         this.currentScenarioIndex = 0;
         this.scanner = new Scanner(System.in);
 
