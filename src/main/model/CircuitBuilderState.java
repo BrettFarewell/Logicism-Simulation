@@ -15,6 +15,12 @@ public class CircuitBuilderState implements Writable {
 
     }
 
+    // MODIFIES: this
+    // EFFECT: adds a scenario to the list of scenarios
+    public void addScenario() {
+        
+    }
+
     // EFFECT: returns list of scenarios in the current state of the circuit builder 
     public ArrayList<Scenario> getScenarioList() {
         return null;
