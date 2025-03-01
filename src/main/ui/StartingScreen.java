@@ -1,13 +1,18 @@
 package ui;
 
 import model.*;
+import persistence.JsonReader;
+import persistence.JsonWriter;
 
 import java.util.List;
 import java.util.Scanner;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 
 // Represents the terminal or ui of the starting screen, where users will create and select scenarios
 public class StartingScreen {
+    private static final String JSON_STORE = "./data/CircuitBuilderState.json";
     private boolean applicationState;
     private boolean scenarioSelectorState;
     private CircuitBuilderState circuitBuilderState;
@@ -15,6 +20,8 @@ public class StartingScreen {
     private int currentScenarioIndex;
     private Scanner scanner;
     private String divider = "--------------------------------------------------";
+    private JsonWriter jsonWriter;
+    private JsonReader jsonReader;
     
     // EFFECTS: initializes the terminal starting screen, sets the application state,
     //          and creates an empty list of scenarios with index set to 0. Brings up the start menu
@@ -243,6 +250,30 @@ public class StartingScreen {
         scenario.addWire(10, 2);
         scenario.addSoundOutput(11, 2);
         scenarios.add(scenario);
+    }
+
+    // EFFECTS: saves the workroom to file
+    private void saveWorkRoom() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(circuitBuilderState);
+            jsonWriter.close();
+            System.out.println("Saved to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE);
+        }
+    }
+
+    // A
+    // MODIFIES: this
+    // EFFECTS: loads workroom from file
+    private void loadWorkRoom() {
+        try {
+            circuitBuilderState = jsonReader.read();
+            System.out.println("Loaded from " + JSON_STORE);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE);
+        }
     }
     
     
