@@ -28,6 +28,8 @@ public class StartingScreen {
     //          Temporarily creates starting scenarios for users to select and adds them to scenarios list
     public StartingScreen() {
         this.applicationState = true;
+        jsonWriter = new JsonWriter(JSON_STORE);
+        jsonReader = new JsonReader(JSON_STORE);
         this.circuitBuilderState = new CircuitBuilderState();
         scenarios = circuitBuilderState.getScenarioList();
         this.currentScenarioIndex = 0;
@@ -36,7 +38,30 @@ public class StartingScreen {
         initializeScenario1();
         initializeScenario2();
         
+        loadMenuPormpt();
+
         startMenu();
+    }
+
+    // EFFECT: sets up the save menu, displays user options, and takes and handles user's input
+    //         through handleInputLoadMenu()
+    public void loadMenuPormpt() {
+        // STUB
+    }
+
+    // MODIFIES: this
+    // EFFECT: sets up the save menu, displays user options, and takes and handles user's input
+    //         through handleInputLoadMenu()
+    public void loadMenuDisplay() {
+        // STUB
+    }
+
+    // EFFECTS: handles user input in menu:
+    //              if y - load circuit through loadWorkRoom()
+    public void handleInputLoadMenu(String key) {
+        if (key.equals("y")) {
+            loadWorkRoom();
+        }
     }
 
     // EFFECTS: sets up the start menu, displays user options, and takes and handles user's input
