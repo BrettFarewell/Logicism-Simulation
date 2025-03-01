@@ -1,7 +1,6 @@
 package persistence;
 
 import model.CircuitBuilderState;
-import model.Scenario;
 
 import java.io.File;
 import java.io.FileNotFoundException;
