@@ -226,6 +226,27 @@ public abstract class LogicElement implements Writable {
 
     @Override
     public JSONObject toJson() {
-        return null;
+        JSONObject json = new JSONObject();
+        json.put("posX", posX);
+        json.put("posY", posY);
+        json.put("category", findKey());
+        return json;
+    }
+
+    // EFFECT: Finds the corresponding key to category
+    private String findKey() {
+        if (this.category.equals(Category.values()[0])) {
+            return "p";
+        } else if (this.category.equals(Category.values()[1])) {
+            return "w";
+        } else if (this.category.equals(Category.values()[2])) {
+            return "a";
+        } else if (this.category.equals(Category.values()[3])) {
+            return "o";
+        } else if (this.category.equals(Category.values()[4])) {
+            return "l";
+        } else {
+            return "s";
+        }
     }
 }
