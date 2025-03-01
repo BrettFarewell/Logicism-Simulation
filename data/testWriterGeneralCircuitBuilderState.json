@@ -1,0 +1,91 @@
+{"scenarios": [
+    {
+        "name": "Scenario1",
+        "logicelements": []
+    },
+    {
+        "name": "Scenario2",
+        "logicelements": [
+            {
+                "posX": 6,
+                "posY": 2,
+                "category": "w"
+            },
+            {
+                "posX": 7,
+                "posY": 2,
+                "category": "w"
+            },
+            {
+                "posX": 8,
+                "posY": 2,
+                "category": "a"
+            },
+            {
+                "posX": 9,
+                "posY": 2,
+                "category": "w"
+            },
+            {
+                "posX": 10,
+                "posY": 2,
+                "category": "w"
+            },
+            {
+                "posX": 11,
+                "posY": 2,
+                "category": "s"
+            },
+            {
+                "posX": 6,
+                "posY": 3,
+                "category": "w"
+            },
+            {
+                "posX": 8,
+                "posY": 3,
+                "category": "l"
+            },
+            {
+                "posX": 6,
+                "posY": 4,
+                "category": "w"
+            },
+            {
+                "posX": 8,
+                "posY": 4,
+                "category": "w"
+            },
+            {
+                "posX": 9,
+                "posY": 4,
+                "category": "w"
+            },
+            {
+                "posX": 5,
+                "posY": 5,
+                "category": "p"
+            },
+            {
+                "posX": 6,
+                "posY": 5,
+                "category": "w"
+            },
+            {
+                "posX": 7,
+                "posY": 5,
+                "category": "w"
+            },
+            {
+                "posX": 8,
+                "posY": 5,
+                "category": "o"
+            },
+            {
+                "posX": 9,
+                "posY": 5,
+                "category": "w"
+            }
+        ]
+    }
+]}
