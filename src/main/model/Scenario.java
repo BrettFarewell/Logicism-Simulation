@@ -4,6 +4,7 @@ import persistence.*;
 
 import java.util.List;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -307,6 +308,19 @@ public class Scenario implements Writable {
         return this.logicElementGrid;
     }
 
+    // EFFECT: return grid of logic elements
+    public List<LogicElement> getLogicElements() {
+        List<LogicElement> logicGateList = new ArrayList<LogicElement>();
+        for (LogicElement[] row: logicElementGrid) {
+            for (LogicElement logicElement: row) {
+                if (logicElement != null) {
+                    logicGateList.add(logicElement);
+                }
+            }
+        }
+        return logicGateList;
+    }
+
     // EFFECT: return list of logic gates by going through grid of logic elements starting from row 0
     //         to row SCREEN_HEIGHT - 1
     public List<LogicElement> getLogicGates() {
@@ -380,6 +394,20 @@ public class Scenario implements Writable {
 
     @Override
     public JSONObject toJson() {
-        return null;
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("logicelements", logicElementsToJson());
+        return json;
+    }
+
+    // EFFECTS: returns logic elements in this scenario as a JSON array
+    private JSONArray logicElementsToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (LogicElement l : getLogicElements()) {
+            jsonArray.put(l.toJson());
+        }
+
+        return jsonArray;
     }
 }
