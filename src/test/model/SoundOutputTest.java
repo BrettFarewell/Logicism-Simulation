@@ -26,6 +26,7 @@ public class SoundOutputTest {
         assertEquals(20, soundOutput.getPosX());
         assertEquals(10, soundOutput.getPosY());
         assertFalse(soundOutput.getPowerStatus());
+        assertEquals(Category.SOUNDOUTPUT, soundOutput.getCategory());
     }
 
     @Test

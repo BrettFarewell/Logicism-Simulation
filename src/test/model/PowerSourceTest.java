@@ -30,6 +30,7 @@ public class PowerSourceTest {
         assertEquals(wire3, powerSource.getAboveElement());
         assertEquals(wire4, powerSource.getBelowElement());
         assertTrue(powerSource.getPowerStatus());
+        assertEquals(Category.POWERSOURCE, powerSource.getCategory());
     }
 
     // Every input remains false as getPowerStatus() returns POWER_STATUS = true and stops propagation

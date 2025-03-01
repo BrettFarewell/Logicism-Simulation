@@ -31,6 +31,7 @@ public class AndGateTest {
         assertEquals(wire3, andGate.getAboveElement());
         assertEquals(wire4, andGate.getBelowElement());
         assertFalse(andGate.getPowerStatus());
+        assertEquals(Category.ANDGATE, andGate.getCategory());
     }
 
     @Test

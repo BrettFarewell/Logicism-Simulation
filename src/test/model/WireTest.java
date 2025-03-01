@@ -34,6 +34,7 @@ public class WireTest {
         assertFalse(wire.getInputAbove());
         assertFalse(wire.getInputBelow());
         assertFalse(wire.getPowerStatus());
+        assertEquals(Category.WIRE, wire.getCategory());
     }
 
     @Test

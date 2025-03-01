@@ -26,6 +26,7 @@ public class LightOutputTest {
         assertEquals(20, lightOutput.getPosX());
         assertEquals(10, lightOutput.getPosY());
         assertFalse(lightOutput.getPowerStatus());
+        assertEquals(Category.LIGHTOUTPUT, lightOutput.getCategory());
     }
 
     @Test

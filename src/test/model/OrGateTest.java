@@ -30,6 +30,7 @@ public class OrGateTest {
         assertEquals(wire3, orGate.getAboveElement());
         assertEquals(wire4, orGate.getBelowElement());
         assertFalse(orGate.getPowerStatus());
+        assertEquals(Category.ORGATE, orGate.getCategory());
     }
 
     @Test
