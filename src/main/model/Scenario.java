@@ -1,12 +1,17 @@
 package model;
 
+import persistence.*;
+
 import java.util.List;
+
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 // Represents a scenario with size of screen in terminal to be 50x20 (50 characters wide, 20 tall) represented by
 // SCREEN_WIDTH and SCREEN_HEIGHT constants. Contains grid of all logic gates, power sources, wires, and output
 // elements
-public class Scenario {
+public class Scenario implements Writable {
     private static final int SCREEN_WIDTH = 50;
     private static final int SCREEN_HEIGHT = 20;
     private LogicElement[][] logicElementGrid;
@@ -371,5 +376,10 @@ public class Scenario {
     // EFFECT: return name of scenario
     public String getName() {
         return this.name;
+    }
+
+    @Override
+    public JSONObject toJson() {
+        return null;
     }
 }
