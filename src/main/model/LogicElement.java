@@ -218,6 +218,6 @@ public abstract class LogicElement {
 
     // EFFECT: returns category
     public Category getCategory() {
-        return null; // STUB
+        return this.category;
     }
 }

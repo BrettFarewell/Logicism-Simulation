@@ -17,6 +17,7 @@ public class LightOutput extends OutputElement {
         this.inputRightStatus = false;
         this.inputAboveStatus = false;
         this.inputBelowStatus = false;
+        this.category = Category.values()[4];
     }
 
     // MODIFIES: this

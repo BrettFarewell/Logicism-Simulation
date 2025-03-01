@@ -17,6 +17,7 @@ public class SoundOutput extends OutputElement {
         this.inputRightStatus = false;
         this.inputAboveStatus = false;
         this.inputBelowStatus = false;
+        this.category = Category.values()[5];
     }
 
     // MODIFIES: this

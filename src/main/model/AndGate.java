@@ -18,6 +18,7 @@ public class AndGate extends LogicGate {
         this.inputRightStatus = false;
         this.inputAboveStatus = false;
         this.inputBelowStatus = false;
+        this.category = Category.values()[2];
     }
 
     // MODIFIES: this

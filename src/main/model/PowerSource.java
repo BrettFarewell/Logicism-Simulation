@@ -18,6 +18,7 @@ public class PowerSource extends LogicElement {
         this.inputRightStatus = false;
         this.inputAboveStatus = false;
         this.inputBelowStatus = false;
+        this.category = Category.values()[0];
     }
 
     // EFFECT: propagates the signal to logic elements to the left, right, above, and below

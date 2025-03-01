@@ -18,6 +18,7 @@ public class OrGate extends LogicGate  {
         this.inputRightStatus = false;
         this.inputAboveStatus = false;
         this.inputBelowStatus = false;
+        this.category = Category.values()[3];
     }
 
     // MODIFIES: this

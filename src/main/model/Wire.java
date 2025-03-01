@@ -18,6 +18,7 @@ public class Wire extends LogicElement {
         this.inputRightStatus = false;
         this.inputAboveStatus = false;
         this.inputBelowStatus = false;
+        this.category = Category.values()[1];
     }
 
     // MODIFIES: this
