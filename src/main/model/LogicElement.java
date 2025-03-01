@@ -6,7 +6,7 @@ package model;
 // as getters and setters for x and y positions in scenario. All logic elements will contain fields of logic elements
 // that are to above, below, right, and left of it in the scenario
 public abstract class LogicElement {
-
+    protected Category category;
     protected int posX;
     protected int posY;
     protected LogicElement elementLeft;
