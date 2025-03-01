@@ -224,6 +224,7 @@ public abstract class LogicElement implements Writable {
         return this.category;
     }
 
+    // ATTRIBUTION: Code structure based on JSONSerializationDemo
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();

@@ -28,13 +28,15 @@ public class CircuitBuilderState implements Writable {
         return this.scenarios;
     }
 
+    // ATTRIBUTION: Code structure based on JSONSerializationDemo
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("scenarios", scenariosToJson());
         return json;
     }
-    
+   
+    // ATTRIBUTION: Code structure based on JSONSerializationDemo
     // EFFECTS: returns scenarios in this circuit builder as a JSON array
     private JSONArray scenariosToJson() {
         JSONArray jsonArray = new JSONArray();

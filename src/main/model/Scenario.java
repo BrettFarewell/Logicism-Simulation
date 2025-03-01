@@ -392,6 +392,7 @@ public class Scenario implements Writable {
         return this.name;
     }
 
+    // ATTRIBUTION: Code structure based on JSONSerializationDemo
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
@@ -400,6 +401,7 @@ public class Scenario implements Writable {
         return json;
     }
 
+    // ATTRIBUTION: Code structure based on JSONSerializationDemo
     // EFFECTS: returns logic elements in this scenario as a JSON array
     private JSONArray logicElementsToJson() {
         JSONArray jsonArray = new JSONArray();
