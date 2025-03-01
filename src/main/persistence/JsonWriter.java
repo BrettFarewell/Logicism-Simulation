@@ -19,7 +19,7 @@ public class JsonWriter {
     // ATTRIBUTION: Code structure based on JSONSerializationDemo JsonWriter class
     // EFFECTS: constructs writer to write to destination file
     public JsonWriter(String destination) {
-        // STUB
+        this.destination = destination;
     }
 
     // ATTRIBUTION: Code structure based on JSONSerializationDemo JsonWriter class
@@ -27,27 +27,28 @@ public class JsonWriter {
     // EFFECTS: opens writer; throws FileNotFoundException if destination file cannot
     // be opened for writing
     public void open() throws FileNotFoundException {
-        // STUB
+        writer = new PrintWriter(new File(destination));
     }
 
     // ATTRIBUTION: Code structure based on JSONSerializationDemo JsonWriter class
     // MODIFIES: this
     // EFFECTS: writes JSON representation of workroom to file
     public void write(CircuitBuilderState circuitBuilderState) {
-        // STUB
+        JSONObject json = circuitBuilderState.toJson();
+        saveToFile(json.toString(TAB));
     }
 
     // ATTRIBUTION: Code structure based on JSONSerializationDemo JsonWriter class
     // MODIFIES: this
     // EFFECTS: closes writer
     public void close() {
-        // STUB
+        writer.close();
     }
 
     // ATTRIBUTION: Code structure based on JSONSerializationDemo JsonWriter class
     // MODIFIES: this
     // EFFECTS: writes string to file
     private void saveToFile(String json) {
-        // STUB
+        writer.print(json);
     }    
 }
