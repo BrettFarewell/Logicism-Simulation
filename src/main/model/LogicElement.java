@@ -1,11 +1,14 @@
 package model;
 
+import org.json.JSONObject;
+
+import persistence.Writable;
 
 // Represents all logic elements (logic gates, power sources, wires, and outputs) interface that will be used to provide
 // needed methods for all logic gates. All gates will have the ability to take an input and produce an output, as well
 // as getters and setters for x and y positions in scenario. All logic elements will contain fields of logic elements
 // that are to above, below, right, and left of it in the scenario
-public abstract class LogicElement {
+public abstract class LogicElement implements Writable {
     protected Category category;
     protected int posX;
     protected int posY;
@@ -219,5 +222,10 @@ public abstract class LogicElement {
     // EFFECT: returns category
     public Category getCategory() {
         return this.category;
+    }
+
+    @Override
+    public JSONObject toJson() {
+        return null;
     }
 }
