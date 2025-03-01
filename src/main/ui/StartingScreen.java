@@ -46,14 +46,20 @@ public class StartingScreen {
     // EFFECT: sets up the save menu, displays user options, and takes and handles user's input
     //         through handleInputLoadMenu()
     public void loadMenuPormpt() {
-        // STUB
+        loadMenuDisplay();
+        String key = this.scanner.nextLine();
+        handleInputLoadMenu(key);
     }
 
     // MODIFIES: this
     // EFFECT: sets up the save menu, displays user options, and takes and handles user's input
     //         through handleInputLoadMenu()
     public void loadMenuDisplay() {
-        // STUB
+        System.out.println(divider);
+        System.out.println("Would you like to load your previous Circuit Builder instance");
+        System.out.println("y - Yes, Please Load!");
+        System.out.println("n - No Thanks!");
+        System.out.println(divider);
     }
 
     // EFFECTS: handles user input in menu:
