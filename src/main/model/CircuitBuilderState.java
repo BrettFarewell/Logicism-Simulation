@@ -3,6 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import persistence.Writable;
@@ -29,7 +30,19 @@ public class CircuitBuilderState implements Writable {
 
     @Override
     public JSONObject toJson() {
-        return null;
+        JSONObject json = new JSONObject();
+        json.put("scenarios", scenariosToJson());
+        return json;
     }
     
+    // EFFECTS: returns scenarios in this circuit builder as a JSON array
+    private JSONArray scenariosToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Scenario s : scenarios) {
+            jsonArray.put(s.toJson());
+        }
+
+        return jsonArray;
+    }
 }
