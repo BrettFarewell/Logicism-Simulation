@@ -215,4 +215,9 @@ public abstract class LogicElement {
     public void setPowerStatus(boolean b) {
         this.powerStatus = b;
     }
+
+    // EFFECT: returns category
+    public Category getCategory() {
+        return null; // STUB
+    }
 }
