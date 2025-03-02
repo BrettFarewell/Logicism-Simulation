@@ -31,19 +31,19 @@ public class StartingScreen {
         jsonWriter = new JsonWriter(JSON_STORE);
         jsonReader = new JsonReader(JSON_STORE);
         this.circuitBuilderState = new CircuitBuilderState();
-        scenarios = circuitBuilderState.getScenarioList();
         this.currentScenarioIndex = 0;
         this.scanner = new Scanner(System.in);
 
+        loadMenuPormpt();
+        scenarios = circuitBuilderState.getScenarioList();
+
         initializeScenario1();
         initializeScenario2();
-        
-        loadMenuPormpt();
 
         startMenu();
     }
 
-    // EFFECT: sets up the save menu, displays user options, and takes and handles user's input
+    // EFFECT: sets up the load menu, displays user options, and takes and handles user's input
     //         through handleInputLoadMenu()
     public void loadMenuPormpt() {
         loadMenuDisplay();
@@ -52,7 +52,7 @@ public class StartingScreen {
     }
 
     // MODIFIES: this
-    // EFFECT: sets up the save menu, displays user options, and takes and handles user's input
+    // EFFECT: sets up the load menu, displays user options, and takes and handles user's input
     //         through handleInputLoadMenu()
     public void loadMenuDisplay() {
         System.out.println(divider);
@@ -62,11 +62,11 @@ public class StartingScreen {
         System.out.println(divider);
     }
 
-    // EFFECTS: handles user input in menu:
+    // EFFECTS: handles user input in load menu:
     //              if y - load circuit through loadWorkRoom()
     public void handleInputLoadMenu(String key) {
         if (key.equals("y")) {
-            loadWorkRoom();
+            loadCircuitBuilderState();
         }
     }
 
@@ -108,12 +108,49 @@ public class StartingScreen {
             System.out.println("Press enter to continue");
             this.scanner.nextLine();
         } else if (key.equals("q")) {
+            saveMenuPormpt();
             quitLogicCircuitBuilder();
         } else {
             System.out.println(divider);
             System.out.println("Invalid response, please try again!");
         }
     }
+
+
+
+
+
+    // EFFECT: sets up the save menu, displays user options, and takes and handles user's input
+    //         through handleInputLoadMenu()
+    public void saveMenuPormpt() {
+        saveMenuDisplay();
+        String key = this.scanner.nextLine();
+        handleInputSaveMenu(key);
+    }
+
+    // MODIFIES: this
+    // EFFECT: sets up the save menu, displays user options, and takes and handles user's input
+    //         through handleInputLoadMenu()
+    public void saveMenuDisplay() {
+        System.out.println(divider);
+        System.out.println("Would you like to save your Circuit Builder instance");
+        System.out.println("y - Yes, Please Save!");
+        System.out.println("n - No Thanks!");
+        System.out.println(divider);
+    }
+
+    // EFFECTS: handles user input in menu:
+    //              if y - save circuit through saveWorkRoom()
+    public void handleInputSaveMenu(String key) {
+        if (key.equals("y")) {
+            saveCircuitBuilderState();
+        }
+    }
+
+
+
+
+
 
     // EFFECT: lists all scenarios in the terminal with their name
     public void listScenarios() {
@@ -149,6 +186,7 @@ public class StartingScreen {
 
     // EFFECTS: displays user options in the scenario selector in the terminal
     public void scenarioSelectorDisplay() {
+    
         System.out.println(divider);
         System.out.println("> - go to next scenario");
         System.out.println("< - go to previous scenario");
@@ -283,8 +321,9 @@ public class StartingScreen {
         scenarios.add(scenario);
     }
 
-    // EFFECTS: saves the workroom to file
-    private void saveWorkRoom() {
+    // ATTRIBUTION: Code structure based on JSONSerializationDemo
+    // EFFECTS: saves the CircuitBuilderState to file
+    private void saveCircuitBuilderState() {
         try {
             jsonWriter.open();
             jsonWriter.write(circuitBuilderState);
@@ -295,10 +334,10 @@ public class StartingScreen {
         }
     }
 
-    // A
+    // ATTRIBUTION: Code structure based on JSONSerializationDemo
     // MODIFIES: this
-    // EFFECTS: loads workroom from file
-    private void loadWorkRoom() {
+    // EFFECTS: loads CircuitBuilderState from file
+    private void loadCircuitBuilderState() {
         try {
             circuitBuilderState = jsonReader.read();
             System.out.println("Loaded from " + JSON_STORE);
