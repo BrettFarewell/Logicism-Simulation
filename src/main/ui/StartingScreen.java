@@ -37,8 +37,8 @@ public class StartingScreen {
         loadMenuPormpt();
         scenarios = circuitBuilderState.getScenarioList();
 
-        initializeScenario1();
-        initializeScenario2();
+        // initializeScenario1();
+        // initializeScenario2();
 
         startMenu();
     }
