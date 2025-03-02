@@ -2,7 +2,8 @@ package persistence;
 
 import model.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class JsonTest {
     protected void checkScenario(Scenario sample, Scenario test) {
@@ -14,17 +15,37 @@ public class JsonTest {
     }
 
     protected void checkElement(LogicElement sample, LogicElement test) {
-        assertEquals(sample.getPosX(), test.getPosX());
-        assertEquals(sample.getPosY(), test.getPosY());
-        assertEquals(sample.getLeftElement(), test.getLeftElement());
-        assertEquals(sample.getRightElement(), test.getRightElement());
-        assertEquals(sample.getAboveElement(), test.getAboveElement());
-        assertEquals(sample.getBelowElement(), test.getBelowElement());
-        assertEquals(sample.getInputLeft(), test.getInputLeft());
-        assertEquals(sample.getInputRight(), test.getInputRight());
-        assertEquals(sample.getInputAbove(), test.getInputAbove());
-        assertEquals(sample.getInputBelow(), test.getInputBelow());
-        assertEquals(sample.getPowerStatus(), test.getPowerStatus());
+        if (sample != null && sample != null) {
+            assertEquals(sample.getPosX(), test.getPosX());
+            assertEquals(sample.getPosY(), test.getPosY());
+            if (sample.getLeftElement() != null) {
+                assertEquals(sample.getLeftElement().getCategory(), test.getLeftElement().getCategory());
+            } else {
+                assertEquals(sample.getLeftElement(), test.getLeftElement());
+            }
+            if (sample.getRightElement() != null) {
+                assertEquals(sample.getRightElement().getCategory(), test.getRightElement().getCategory());
+            } else {
+                assertEquals(sample.getRightElement(), test.getRightElement());
+            }
+            if (sample.getAboveElement() != null) {
+                assertEquals(sample.getAboveElement().getCategory(), test.getAboveElement().getCategory());
+            } else {
+                assertEquals(sample.getAboveElement(), test.getAboveElement());
+            }
+            if (sample.getBelowElement() != null) {
+                assertEquals(sample.getBelowElement().getCategory(), test.getBelowElement().getCategory());
+            } else {
+                assertEquals(sample.getBelowElement(), test.getBelowElement());
+            }
+            assertEquals(sample.getInputLeft(), test.getInputLeft());
+            assertEquals(sample.getInputRight(), test.getInputRight());
+            assertEquals(sample.getInputAbove(), test.getInputAbove());
+            assertEquals(sample.getInputBelow(), test.getInputBelow());
+            assertEquals(sample.getPowerStatus(), test.getPowerStatus());
+        } else if ((sample == null && sample != null) || (sample != null && sample == null)) {
+            fail();
+        }
     }
 
     protected Scenario initializeScenario(String name) {

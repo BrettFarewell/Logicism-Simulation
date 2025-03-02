@@ -30,7 +30,7 @@ public class JsonReaderTest extends JsonTest {
         JsonReader reader = new JsonReader("./data/testReaderEmptyCircuitBuilderState.json");
         try {
             CircuitBuilderState circuitBuilderState = reader.read();
-            assertEquals(0, circuitBuilderState.getScenarioList());
+            assertEquals(0, circuitBuilderState.getScenarioList().size());
         } catch (IOException e) {
             fail("Couldn't read from file");
         }
