@@ -18,33 +18,37 @@ public class JsonTest {
         if (sample != null && sample != null) {
             assertEquals(sample.getPosX(), test.getPosX());
             assertEquals(sample.getPosY(), test.getPosY());
-            if (sample.getLeftElement() != null) {
-                assertEquals(sample.getLeftElement().getCategory(), test.getLeftElement().getCategory());
-            } else {
-                assertEquals(sample.getLeftElement(), test.getLeftElement());
-            }
-            if (sample.getRightElement() != null) {
-                assertEquals(sample.getRightElement().getCategory(), test.getRightElement().getCategory());
-            } else {
-                assertEquals(sample.getRightElement(), test.getRightElement());
-            }
-            if (sample.getAboveElement() != null) {
-                assertEquals(sample.getAboveElement().getCategory(), test.getAboveElement().getCategory());
-            } else {
-                assertEquals(sample.getAboveElement(), test.getAboveElement());
-            }
-            if (sample.getBelowElement() != null) {
-                assertEquals(sample.getBelowElement().getCategory(), test.getBelowElement().getCategory());
-            } else {
-                assertEquals(sample.getBelowElement(), test.getBelowElement());
-            }
+            checkNextToElements(sample, test);
             assertEquals(sample.getInputLeft(), test.getInputLeft());
             assertEquals(sample.getInputRight(), test.getInputRight());
             assertEquals(sample.getInputAbove(), test.getInputAbove());
             assertEquals(sample.getInputBelow(), test.getInputBelow());
             assertEquals(sample.getPowerStatus(), test.getPowerStatus());
         } else if ((sample == null && sample != null) || (sample != null && sample == null)) {
-            fail();
+            fail("If sample logic element is null, then the test logic element should be null");
+        }
+    }
+
+    private void checkNextToElements(LogicElement sample, LogicElement test) {
+        if (sample.getLeftElement() != null) {
+            assertEquals(sample.getLeftElement().getCategory(), test.getLeftElement().getCategory());
+        } else {
+            assertEquals(sample.getLeftElement(), test.getLeftElement());
+        }
+        if (sample.getRightElement() != null) {
+            assertEquals(sample.getRightElement().getCategory(), test.getRightElement().getCategory());
+        } else {
+            assertEquals(sample.getRightElement(), test.getRightElement());
+        }
+        if (sample.getAboveElement() != null) {
+            assertEquals(sample.getAboveElement().getCategory(), test.getAboveElement().getCategory());
+        } else {
+            assertEquals(sample.getAboveElement(), test.getAboveElement());
+        }
+        if (sample.getBelowElement() != null) {
+            assertEquals(sample.getBelowElement().getCategory(), test.getBelowElement().getCategory());
+        } else {
+            assertEquals(sample.getBelowElement(), test.getBelowElement());
         }
     }
 

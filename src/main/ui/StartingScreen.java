@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
 
 // Represents the terminal or ui of the starting screen, where users will create and select scenarios
 public class StartingScreen {
