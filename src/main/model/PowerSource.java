@@ -22,6 +22,7 @@ public class PowerSource extends LogicElement {
     }
 
     // EFFECT: propagates the signal to logic elements to the left, right, above, and below
+    @Override
     public void checkPowerStatus() {
         outputLeft();
         outputRight();

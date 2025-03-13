@@ -23,6 +23,7 @@ public class AndGate extends LogicGate {
 
     // MODIFIES: this
     // EFFECTS: checks to see if left and bottom inputs are "on", if so turns power status "on" and calls outputRight()
+    @Override
     public void checkPowerStatus() {
         if (inputLeftStatus == true && inputBelowStatus == true) {
             this.powerStatus = true;

@@ -22,6 +22,7 @@ public class LightOutput extends OutputElement {
 
     // MODIFIES: this
     // EFFECTS: checks to see if any inputs are "on" and turns power status "on"
+    @Override
     public void checkPowerStatus() {
         if (inputLeftStatus == true
                 || inputRightStatus == true

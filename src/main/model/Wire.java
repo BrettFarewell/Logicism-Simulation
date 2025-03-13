@@ -24,6 +24,7 @@ public class Wire extends LogicElement {
     // MODIFIES: this
     // EFFECTS: checks to see if any input are "on", if so turns power status "on" and calls outputLeft(),
     //          outputRight(), outputAbove(), outputBelow(),
+    @Override
     public void checkPowerStatus() {
         if (inputLeftStatus == true
                 || inputRightStatus == true
