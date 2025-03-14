@@ -110,6 +110,19 @@ public class Scenario implements Writable {
     //              (example set element Right of OrGate at x = 19, y = 10 to AndGate created at x = 20, y = 10)
     public void addAndGate(int x, int y) {
         LogicElement andGate = new AndGate(x, y, null, null, null, null);
+        placeLogicElement(x, y, andGate);
+        logicElementGrid[y][x] = andGate;
+    }
+
+    // REQUIRES: 0 <= x <= SCREEN_WIDTH and 0 <= y <= SCREEN_HEIGHT
+    // MODIFIES: this
+    // EFFECT: when it is created it is given logic elements/null around it in the grid
+    //              (example if x = 20, y = 10; given OrGate at x = 19, y = 9 to its left)
+    //         if on the edge of grid (e.i. x == 0, SCREEN_WIDTH and/or y == 0, SCREEN_HEIGHT) then given null
+    //              in directions outside of grid (i.e. logic element cannot exist at x = -1, y = 10 so given null)
+    //         for elements around create logic element, set appropriate element direction to crete AND gate
+    //              (example set element Right of OrGate at x = 19, y = 10 to AndGate created at x = 20, y = 10)
+    private void placeLogicElement(int x, int y, LogicElement andGate) {
         if (x != 0 && logicElementGrid[y][x - 1] != null) {
             LogicElement left = logicElementGrid[y][x - 1];
             andGate.setLeftElement(left);
@@ -130,7 +143,6 @@ public class Scenario implements Writable {
             andGate.setBelowElement(below);
             below.setAboveElement(andGate);
         }
-        logicElementGrid[y][x] = andGate;
     }
 
     // REQUIRES: 0 <= x <= SCREEN_WIDTH and 0 <= y <= SCREEN_HEIGHT
@@ -144,26 +156,7 @@ public class Scenario implements Writable {
     //              (example set element Right of OrGate at x = 19, y = 10 to OrGate created at x = 20, y = 10)
     public void addOrGate(int x, int y) {
         LogicElement orGate = new OrGate(x, y, null, null, null, null);
-        if (x != 0 && logicElementGrid[y][x - 1] != null) {
-            LogicElement left = logicElementGrid[y][x - 1];
-            orGate.setLeftElement(left);
-            left.setRightElement(orGate);
-        }
-        if (x != SCREEN_WIDTH - 1 && logicElementGrid[y][x + 1] != null) {
-            LogicElement right = logicElementGrid[y][x + 1];
-            orGate.setRightElement(right);
-            right.setLeftElement(orGate);
-        }
-        if (y != 0 && logicElementGrid[y - 1][x] != null) {
-            LogicElement above = logicElementGrid[y - 1][x];
-            orGate.setAboveElement(above);
-            above.setBelowElement(orGate);
-        }
-        if (y != SCREEN_HEIGHT - 1 && logicElementGrid[y + 1][x] != null) {
-            LogicElement below = logicElementGrid[y + 1][x];
-            orGate.setBelowElement(below);
-            below.setAboveElement(orGate);
-        }
+        placeLogicElement(x, y, orGate);
         logicElementGrid[y][x] = orGate;
     }
 
@@ -178,26 +171,7 @@ public class Scenario implements Writable {
     //              (example set element Right of OrGate at x = 19, y = 10 to PowerSource created at x = 20, y = 10)
     public void addPowerSource(int x, int y) {
         LogicElement powerSource = new PowerSource(x, y, null, null, null, null);
-        if (x != 0 && logicElementGrid[y][x - 1] != null) {
-            LogicElement left = logicElementGrid[y][x - 1];
-            powerSource.setLeftElement(left);
-            left.setRightElement(powerSource);
-        }
-        if (x != SCREEN_WIDTH - 1 && logicElementGrid[y][x + 1] != null) {
-            LogicElement right = logicElementGrid[y][x + 1];
-            powerSource.setRightElement(right);
-            right.setLeftElement(powerSource);
-        }
-        if (y != 0 && logicElementGrid[y - 1][x] != null) {
-            LogicElement above = logicElementGrid[y - 1][x];
-            powerSource.setAboveElement(above);
-            above.setBelowElement(powerSource);
-        }
-        if (y != SCREEN_HEIGHT - 1 && logicElementGrid[y + 1][x] != null) {
-            LogicElement below = logicElementGrid[y + 1][x];
-            powerSource.setBelowElement(below);
-            below.setAboveElement(powerSource);
-        }
+        placeLogicElement(x, y, powerSource);
         logicElementGrid[y][x] = powerSource;
     }
 
@@ -212,26 +186,7 @@ public class Scenario implements Writable {
     //              (example set element Right of OrGate at x = 19, y = 10 to Wire created at x = 20, y = 10)
     public void addWire(int x, int y) {
         LogicElement wire = new Wire(x, y, null, null, null, null);
-        if (x != 0 && logicElementGrid[y][x - 1] != null) {
-            LogicElement left = logicElementGrid[y][x - 1];
-            wire.setLeftElement(left);
-            left.setRightElement(wire);
-        }
-        if (x != SCREEN_WIDTH - 1 && logicElementGrid[y][x + 1] != null) {
-            LogicElement right = logicElementGrid[y][x + 1];
-            wire.setRightElement(right);
-            right.setLeftElement(wire);
-        }
-        if (y != 0 && logicElementGrid[y - 1][x] != null) {
-            LogicElement above = logicElementGrid[y - 1][x];
-            wire.setAboveElement(above);
-            above.setBelowElement(wire);
-        }
-        if (y != SCREEN_HEIGHT - 1 && logicElementGrid[y + 1][x] != null) {
-            LogicElement below = logicElementGrid[y + 1][x];
-            wire.setBelowElement(below);
-            below.setAboveElement(wire);
-        }
+        placeLogicElement(x, y, wire);
         logicElementGrid[y][x] = wire;
     }
 
@@ -246,26 +201,7 @@ public class Scenario implements Writable {
     //              (example set element Right of OrGate at x = 19, y = 10 to LightOutput created at x = 20, y = 10)
     public void addLightOutput(int x, int y) {
         LogicElement lightOutput = new LightOutput(x, y, null, null, null, null);
-        if (x != 0 && logicElementGrid[y][x - 1] != null) {
-            LogicElement left = logicElementGrid[y][x - 1];
-            lightOutput.setLeftElement(left);
-            left.setRightElement(lightOutput);
-        }
-        if (x != SCREEN_WIDTH - 1 && logicElementGrid[y][x + 1] != null) {
-            LogicElement right = logicElementGrid[y][x + 1];
-            lightOutput.setRightElement(right);
-            right.setLeftElement(lightOutput);
-        }
-        if (y != 0 && logicElementGrid[y - 1][x] != null) {
-            LogicElement above = logicElementGrid[y - 1][x];
-            lightOutput.setAboveElement(above);
-            above.setBelowElement(lightOutput);
-        }
-        if (y != SCREEN_HEIGHT - 1 && logicElementGrid[y + 1][x] != null) {
-            LogicElement below = logicElementGrid[y + 1][x];
-            lightOutput.setBelowElement(below);
-            below.setAboveElement(lightOutput);
-        }
+        placeLogicElement(x, y, lightOutput);
         logicElementGrid[y][x] = lightOutput;
     }
 
@@ -280,26 +216,7 @@ public class Scenario implements Writable {
     //              (example set element Right of OrGate at x = 19, y = 10 to SoundOutput created at x = 20, y = 10)
     public void addSoundOutput(int x, int y) {
         LogicElement soundOutput = new SoundOutput(x, y, null, null, null, null);
-        if (x != 0 && logicElementGrid[y][x - 1] != null) {
-            LogicElement left = logicElementGrid[y][x - 1];
-            soundOutput.setLeftElement(left);
-            left.setRightElement(soundOutput);
-        }
-        if (x != SCREEN_WIDTH - 1 && logicElementGrid[y][x + 1] != null) {
-            LogicElement right = logicElementGrid[y][x + 1];
-            soundOutput.setRightElement(right);
-            right.setLeftElement(soundOutput);
-        }
-        if (y != 0 && logicElementGrid[y - 1][x] != null) {
-            LogicElement above = logicElementGrid[y - 1][x];
-            soundOutput.setAboveElement(above);
-            above.setBelowElement(soundOutput);
-        }
-        if (y != SCREEN_HEIGHT - 1 && logicElementGrid[y + 1][x] != null) {
-            LogicElement below = logicElementGrid[y + 1][x];
-            soundOutput.setBelowElement(below);
-            below.setAboveElement(soundOutput);
-        }
+        placeLogicElement(x, y, soundOutput);
         logicElementGrid[y][x] = soundOutput;
     }
 
