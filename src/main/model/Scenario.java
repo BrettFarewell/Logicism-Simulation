@@ -122,26 +122,26 @@ public class Scenario implements Writable {
     //              in directions outside of grid (i.e. logic element cannot exist at x = -1, y = 10 so given null)
     //         for elements around create logic element, set appropriate element direction to crete AND gate
     //              (example set element Right of OrGate at x = 19, y = 10 to AndGate created at x = 20, y = 10)
-    private void placeLogicElement(int x, int y, LogicElement andGate) {
+    private void placeLogicElement(int x, int y, LogicElement logicElement) {
         if (x != 0 && logicElementGrid[y][x - 1] != null) {
             LogicElement left = logicElementGrid[y][x - 1];
-            andGate.setLeftElement(left);
-            left.setRightElement(andGate);
+            logicElement.setLeftElement(left);
+            left.setRightElement(logicElement);
         }
         if (x != SCREEN_WIDTH - 1 && logicElementGrid[y][x + 1] != null) {
             LogicElement right = logicElementGrid[y][x + 1];
-            andGate.setRightElement(right);
-            right.setLeftElement(andGate);
+            logicElement.setRightElement(right);
+            right.setLeftElement(logicElement);
         }
         if (y != 0 && logicElementGrid[y - 1][x] != null) {
             LogicElement above = logicElementGrid[y - 1][x];
-            andGate.setAboveElement(above);
-            above.setBelowElement(andGate);
+            logicElement.setAboveElement(above);
+            above.setBelowElement(logicElement);
         }
         if (y != SCREEN_HEIGHT - 1 && logicElementGrid[y + 1][x] != null) {
             LogicElement below = logicElementGrid[y + 1][x];
-            andGate.setBelowElement(below);
-            below.setAboveElement(andGate);
+            logicElement.setBelowElement(below);
+            below.setAboveElement(logicElement);
         }
     }
 

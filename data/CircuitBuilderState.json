@@ -202,5 +202,50 @@
                 "category": "p"
             }
         ]
+    },
+    {
+        "name": "test",
+        "logicelements": [
+            {
+                "posX": 12,
+                "posY": 7,
+                "category": "l"
+            },
+            {
+                "posX": 9,
+                "posY": 8,
+                "category": "p"
+            },
+            {
+                "posX": 10,
+                "posY": 8,
+                "category": "w"
+            },
+            {
+                "posX": 11,
+                "posY": 8,
+                "category": "w"
+            },
+            {
+                "posX": 12,
+                "posY": 8,
+                "category": "w"
+            },
+            {
+                "posX": 13,
+                "posY": 8,
+                "category": "a"
+            },
+            {
+                "posX": 14,
+                "posY": 8,
+                "category": "w"
+            },
+            {
+                "posX": 15,
+                "posY": 8,
+                "category": "s"
+            }
+        ]
     }
 ]}
