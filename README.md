@@ -41,3 +41,83 @@ up top of the selected Scenario Tab will be the where you add your logic element
 you place and it will light up above in the grid
 - You can save the state of my application by hitting the save button on the Home Tab
 - You can reload the state of my application by hitting the load button on the Home Tab
+
+
+# Phase 4: Task 2
+
+```
+Sat Mar 29 09:50:40 PDT 2025
+Generated a new Scenario: Test Scenario
+
+
+Sat Mar 29 09:50:43 PDT 2025
+Added Power Source at 12 x 9 in Scenario: Test Scenario
+
+
+Sat Mar 29 09:50:44 PDT 2025
+Added Wire at 13 x 9 in Scenario: Test Scenario
+
+
+Sat Mar 29 09:50:45 PDT 2025
+Added Wire at 14 x 9 in Scenario: Test Scenario
+
+
+Sat Mar 29 09:50:46 PDT 2025
+Added ORGate at 15 x 9 in Scenario: Test Scenario
+
+
+Sat Mar 29 09:50:47 PDT 2025
+Added Wire at 16 x 9 in Scenario: Test Scenario
+
+
+Sat Mar 29 09:50:48 PDT 2025
+Added Wire at 17 x 9 in Scenario: Test Scenario
+
+
+Sat Mar 29 09:50:49 PDT 2025
+Added Light Output at 18 x 9 in Scenario: Test Scenario
+
+
+Sat Mar 29 09:50:52 PDT 2025
+Added Power Source at 16 x 15 in Scenario: Test Scenario
+
+
+Sat Mar 29 09:50:53 PDT 2025
+Added Wire at 23 x 15 in Scenario: Test Scenario
+
+
+Sat Mar 29 09:50:55 PDT 2025
+Removed Element at 23 x 15 in Scenario: Test Scenario
+
+
+Sat Mar 29 09:50:56 PDT 2025
+Removed Element at 16 x 15 in Scenario: Test Scenario
+
+
+Sat Mar 29 09:50:58 PDT 2025
+Listed PowerSources in Scenario: Test Scenario
+
+
+Sat Mar 29 09:50:58 PDT 2025
+Ran Logic Circuit in ScenarioTest Scenario
+
+
+Sat Mar 29 09:50:59 PDT 2025
+Reset Logic Circuit in Scenario:Test Scenario
+
+
+Sat Mar 29 09:51:01 PDT 2025
+Listed LogicGates in Scenario: Test Scenario
+
+
+Sat Mar 29 09:51:01 PDT 2025
+Listed PowerSources in Scenario: Test Scenario
+
+
+Sat Mar 29 09:51:01 PDT 2025
+Listed OutputElements in Scenario: Test Scenario
+
+
+Sat Mar 29 09:51:06 PDT 2025
+Saved application state to ./data/CircuitBuilderState.json
+```

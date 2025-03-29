@@ -26,6 +26,7 @@ public class JsonReader {
     // EFFECTS: reads CircuitBuilderState from file and returns it;
     // throws IOException if an error occurs reading data from file
     public CircuitBuilderState read() throws IOException {
+        EventLog.getInstance().logEvent(new Event("Loaded application state from " + source));
         String jsonData = readFile(source);
         JSONObject jsonObject = new JSONObject(jsonData);
         return parseCircuitBuilderState(jsonObject);

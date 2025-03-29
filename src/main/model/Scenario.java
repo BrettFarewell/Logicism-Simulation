@@ -32,6 +32,7 @@ public class Scenario implements Writable {
         for (LogicElement powerSource: powersources) {
             powerSource.checkPowerStatus();
         }
+        EventLog.getInstance().logEvent(new Event("Ran Logic Circuit in Scenario" + name));
     }
 
     // MODIFIES: this
@@ -44,6 +45,7 @@ public class Scenario implements Writable {
                 }
             }
         }
+        EventLog.getInstance().logEvent(new Event("Reset Logic Circuit in Scenario:" + name));
     }
 
     // REQUIRES: c == a, o, p, w, l, s, or d and 0 <= x <= SCREEN_WIDTH - 1 and 0 <= y <= SCREEN_HEIGHT - 1
@@ -57,6 +59,7 @@ public class Scenario implements Writable {
     //              if c == s, create a SoundOutput at x, y through addSoundOutput(x, y)
     //              if c == d, delete logic element at x, y through deleteElement(x, y)
     public void addLogicElement(String c, int x, int y) {
+        logAddElementEvent(c, x, y);
         if (c.equals("a")) {
             addAndGate(x, y);
         } else if (c.equals("o")) {
@@ -72,7 +75,27 @@ public class Scenario implements Writable {
         } else {
             deleteElement(x, y);
         }
-        
+    }
+
+    private void logAddElementEvent(String c, int x, int y) {
+        if (c.equals("a")) {
+            EventLog.getInstance().logEvent(new Event("Added ANDGate at " + x + " x " + y + " in Scenario: " + name));
+        } else if (c.equals("o")) {
+            EventLog.getInstance().logEvent(new Event("Added ORGate at " + x + " x " + y + " in Scenario: " + name));
+        } else if (c.equals("p")) {
+            EventLog.getInstance().logEvent(new Event("Added Power Source at " + x + " x " + y + " in Scenario: "
+                    + name));
+        } else if (c.equals("w")) {
+            EventLog.getInstance().logEvent(new Event("Added Wire at " + x + " x " + y + " in Scenario: " + name));
+        } else if (c.equals("l")) {
+            EventLog.getInstance().logEvent(new Event("Added Light Output at " + x + " x " + y + " in Scenario: "
+                    + name));
+        } else if (c.equals("s")) {
+            EventLog.getInstance().logEvent(new Event("Added Sound Output at " + x + " x " + y + " in Scenario: "
+                    + name));
+        } else if (c.equals("d")) {
+            EventLog.getInstance().logEvent(new Event("Removed Element at " + x + " x " + y + " in Scenario: " + name));
+        }
     }
 
     // REQUIRES: 0 <= x <= SCREEN_WIDTH and 0 <= y <= SCREEN_HEIGHT
@@ -241,6 +264,7 @@ public class Scenario implements Writable {
     // EFFECT: return list of logic gates by going through grid of logic elements starting from row 0
     //         to row SCREEN_HEIGHT - 1
     public List<LogicElement> getLogicGates() {
+        EventLog.getInstance().logEvent(new Event("Listed LogicGates in Scenario: " + name));
         List<LogicElement> logicGateList = new ArrayList<LogicElement>();
         for (LogicElement[] row: logicElementGrid) {
             for (LogicElement logicElement: row) {
@@ -269,6 +293,7 @@ public class Scenario implements Writable {
     // EFFECT: return list of output elements  by going through grid of logic elements starting from row 0
     //         to row SCREEN_HEIGHT - 1
     public List<LogicElement> getOutputElements() {
+        EventLog.getInstance().logEvent(new Event("Listed OutputElements in Scenario: " + name));
         List<LogicElement> outputElementList = new ArrayList<LogicElement>();
         for (LogicElement[] row: logicElementGrid) {
             for (LogicElement logicElement: row) {
@@ -283,6 +308,7 @@ public class Scenario implements Writable {
     // EFFECT: return list of power sources  by going through grid of logic elements starting from row 0
     //         to row SCREEN_HEIGHT - 1
     public List<LogicElement> getPowerSources() {
+        EventLog.getInstance().logEvent(new Event("Listed PowerSources in Scenario: " + name));
         List<LogicElement> powerSourceList = new ArrayList<LogicElement>();
         for (LogicElement[] row: logicElementGrid) {
             for (LogicElement logicElement: row) {

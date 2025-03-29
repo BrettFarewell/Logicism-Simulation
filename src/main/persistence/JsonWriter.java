@@ -1,6 +1,8 @@
 package persistence;
 
 import model.CircuitBuilderState;
+import model.Event;
+import model.EventLog;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -33,6 +35,7 @@ public class JsonWriter {
     // MODIFIES: this
     // EFFECTS: writes JSON representation of workroom to file
     public void write(CircuitBuilderState circuitBuilderState) {
+        EventLog.getInstance().logEvent(new Event("Saved application state to " + destination));
         JSONObject json = circuitBuilderState.toJson();
         saveToFile(json.toString(TAB));
     }

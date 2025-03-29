@@ -20,6 +20,7 @@ public class CircuitBuilderState implements Writable {
     // MODIFIES: this
     // EFFECT: adds a scenario to the list of scenarios
     public void addScenario(Scenario scenario) {
+        EventLog.getInstance().logEvent(new Event("Generated a new Scenario: " + scenario.getName()));
         this.scenarios.add(scenario);
     }
 
@@ -40,11 +41,9 @@ public class CircuitBuilderState implements Writable {
     // EFFECTS: returns scenarios in this circuit builder as a JSON array
     private JSONArray scenariosToJson() {
         JSONArray jsonArray = new JSONArray();
-
         for (Scenario s : scenarios) {
             jsonArray.put(s.toJson());
         }
-
         return jsonArray;
     }
 }

@@ -331,13 +331,13 @@ public class ScenarioTab extends Tab {
         this.runButtonStatus = false;
         this.runButton.setText("Reset");
         this.runButton.setBackground(Color.red);
-        this.scenario.resetScenario();
     }
 
     // MODIFIES: this
     // EFFECTS: resets the scenario back to everything powered off and the buttons in the grid panel update
     //          sets runButtonStatus = true and the run button turns back to light gray and says "run"
     private void resetRunButton() {
+        this.scenario.resetScenario();
         for (int i = 0; i < scenario.getScreenHeight() * scenario.getScreenWidth(); i++) {
             ElementButton elementButton = (ElementButton)gridPanel.getComponent(i);
             LogicElement[][] logicElementGrid = this.scenario.getLogicElementGrid();

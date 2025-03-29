@@ -1,251 +1,40 @@
-{"scenarios": [
-    {
-        "name": "Functioning Circuit",
-        "logicelements": [
-            {
-                "posX": 0,
-                "posY": 0,
-                "category": "w"
-            },
-            {
-                "posX": 3,
-                "posY": 0,
-                "category": "a"
-            },
-            {
-                "posX": 6,
-                "posY": 2,
-                "category": "w"
-            },
-            {
-                "posX": 7,
-                "posY": 2,
-                "category": "w"
-            },
-            {
-                "posX": 8,
-                "posY": 2,
-                "category": "a"
-            },
-            {
-                "posX": 9,
-                "posY": 2,
-                "category": "w"
-            },
-            {
-                "posX": 10,
-                "posY": 2,
-                "category": "w"
-            },
-            {
-                "posX": 11,
-                "posY": 2,
-                "category": "s"
-            },
-            {
-                "posX": 3,
-                "posY": 3,
-                "category": "s"
-            },
-            {
-                "posX": 6,
-                "posY": 3,
-                "category": "w"
-            },
-            {
-                "posX": 8,
-                "posY": 3,
-                "category": "w"
-            },
-            {
-                "posX": 6,
-                "posY": 4,
-                "category": "w"
-            },
-            {
-                "posX": 8,
-                "posY": 4,
-                "category": "w"
-            },
-            {
-                "posX": 9,
-                "posY": 4,
-                "category": "w"
-            },
-            {
-                "posX": 5,
-                "posY": 5,
-                "category": "p"
-            },
-            {
-                "posX": 6,
-                "posY": 5,
-                "category": "w"
-            },
-            {
-                "posX": 7,
-                "posY": 5,
-                "category": "w"
-            },
-            {
-                "posX": 8,
-                "posY": 5,
-                "category": "o"
-            },
-            {
-                "posX": 9,
-                "posY": 5,
-                "category": "w"
-            }
-        ]
-    },
-    {
-        "name": "Non-Functioning Circuit",
-        "logicelements": [
-            {
-                "posX": 6,
-                "posY": 2,
-                "category": "w"
-            },
-            {
-                "posX": 7,
-                "posY": 2,
-                "category": "w"
-            },
-            {
-                "posX": 8,
-                "posY": 2,
-                "category": "a"
-            },
-            {
-                "posX": 9,
-                "posY": 2,
-                "category": "w"
-            },
-            {
-                "posX": 10,
-                "posY": 2,
-                "category": "w"
-            },
-            {
-                "posX": 11,
-                "posY": 2,
-                "category": "l"
-            },
-            {
-                "posX": 6,
-                "posY": 3,
-                "category": "w"
-            },
-            {
-                "posX": 6,
-                "posY": 4,
-                "category": "w"
-            },
-            {
-                "posX": 5,
-                "posY": 5,
-                "category": "p"
-            },
-            {
-                "posX": 6,
-                "posY": 5,
-                "category": "w"
-            },
-            {
-                "posX": 7,
-                "posY": 5,
-                "category": "w"
-            },
-            {
-                "posX": 8,
-                "posY": 5,
-                "category": "o"
-            },
-            {
-                "posX": 9,
-                "posY": 5,
-                "category": "w"
-            }
-        ]
-    },
-    {
-        "name": "test",
-        "logicelements": []
-    },
-    {
-        "name": "test2",
-        "logicelements": [
-            {
-                "posX": 0,
-                "posY": 0,
-                "category": "w"
-            },
-            {
-                "posX": 2,
-                "posY": 0,
-                "category": "o"
-            },
-            {
-                "posX": 3,
-                "posY": 0,
-                "category": "w"
-            },
-            {
-                "posX": 4,
-                "posY": 0,
-                "category": "l"
-            },
-            {
-                "posX": 0,
-                "posY": 1,
-                "category": "p"
-            }
-        ]
-    },
-    {
-        "name": "test",
-        "logicelements": [
-            {
-                "posX": 12,
-                "posY": 7,
-                "category": "l"
-            },
-            {
-                "posX": 9,
-                "posY": 8,
-                "category": "p"
-            },
-            {
-                "posX": 10,
-                "posY": 8,
-                "category": "w"
-            },
-            {
-                "posX": 11,
-                "posY": 8,
-                "category": "w"
-            },
-            {
-                "posX": 12,
-                "posY": 8,
-                "category": "w"
-            },
-            {
-                "posX": 13,
-                "posY": 8,
-                "category": "a"
-            },
-            {
-                "posX": 14,
-                "posY": 8,
-                "category": "w"
-            },
-            {
-                "posX": 15,
-                "posY": 8,
-                "category": "s"
-            }
-        ]
-    }
-]}
+{"scenarios": [{
+    "name": "Test Scenario",
+    "logicelements": [
+        {
+            "posX": 12,
+            "posY": 9,
+            "category": "p"
+        },
+        {
+            "posX": 13,
+            "posY": 9,
+            "category": "w"
+        },
+        {
+            "posX": 14,
+            "posY": 9,
+            "category": "w"
+        },
+        {
+            "posX": 15,
+            "posY": 9,
+            "category": "o"
+        },
+        {
+            "posX": 16,
+            "posY": 9,
+            "category": "w"
+        },
+        {
+            "posX": 17,
+            "posY": 9,
+            "category": "w"
+        },
+        {
+            "posX": 18,
+            "posY": 9,
+            "category": "l"
+        }
+    ]
+}]}

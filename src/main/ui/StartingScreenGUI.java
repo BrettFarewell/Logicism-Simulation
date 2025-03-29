@@ -6,8 +6,12 @@ import java.io.IOException;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowAdapter;
 
 import model.CircuitBuilderState;
+import model.Event;
+import model.EventLog;
 import persistence.JsonReader;
 import persistence.JsonWriter;
 import ui.tabs.*;
@@ -37,6 +41,15 @@ public class StartingScreenGUI extends JFrame {
 
         configTabs();
         hortTabs.addChangeListener(new TabSizeChanger(this, hortTabs));
+
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                for (Event next : EventLog.getInstance()) {
+                    System.out.println(next.toString() + "\n\n");
+                }
+            }
+        });
 
         setSize(600, 600);
         setVisible(true);
