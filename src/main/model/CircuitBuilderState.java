@@ -17,6 +17,7 @@ public class CircuitBuilderState implements Writable {
         scenarios = new ArrayList<Scenario>();
     }
 
+    // ATTRIBUTION: EventLog comes from the the AlermSystem project  
     // MODIFIES: this
     // EFFECT: adds a scenario to the list of scenarios
     public void addScenario(Scenario scenario) {

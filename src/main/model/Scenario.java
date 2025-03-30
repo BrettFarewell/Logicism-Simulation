@@ -9,6 +9,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+// ATTRIBUTION: Many methods using EventLog comes from the the AlermSystem project
 // Represents a scenario with size of screen in terminal to be 50x20 (50 characters wide, 20 tall) represented by
 // SCREEN_WIDTH and SCREEN_HEIGHT constants. Contains grid of all logic gates, power sources, wires, and output
 // elements
