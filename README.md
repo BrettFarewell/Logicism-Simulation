@@ -121,3 +121,9 @@ Listed OutputElements in Scenario: Test Scenario
 Sat Mar 29 09:51:06 PDT 2025
 Saved application state to ./data/CircuitBuilderState.json
 ```
+
+# Phase 4: Task 3
+
+- For the UI, there was a lot of unnecessary associations of the StartingScreenGUI that were not needed in the end. Also, there is too much coupling in the buttons package as only ElementButton was needed. Even the enum ButtonName was over-complicating the buttons in the HomeTab class. On the other hand, the Tab subclasses often were responsible for displaying everything on each tab. While this was fine with the HomeTab, the ScenarioTab does not follow the Single Design Principle as each panel the in the ScenarioTab is exclusively made in the ScenarioTab class.
+
+- Additionally, for my model, while the LogicElement class does take some inspiration from the composite design patterns, it also has some elements that a observer design pattern would have. As such, a more robust design pattern tackling the Scenario class and the LogicElement class and subclasses and trying to implement a better design pattern that incorporates both the observer and composite design patterns would be beneficial for clarity and ease of use. This can be made especially clear looking at the abstract LogicGate class that has nothing in it and was originally designed to differentiate but still group the OrGate and AndGate from the rest of the LogicElements.
