@@ -27,17 +27,30 @@ This project was developed to deepen my understanding of digital systems and low
 
 # Instructions for End User
 
-- You can generate the first required action related to the user story "adding multiple Xs to a Y" by selecting the Scenes
-Tab at the top, then selecting a scenario (or generating a scenario in the new scene tab on the left), then hitting 
-selecting a logic element to add by clicking any of the logic elements (ANDGate, ORGate, Power, etc.). After, the selected
-element field should chnage to what you selected and you can add an element to anywhere on the grid above. You can also
-delete an element by hitting delete the delete button and then selecting the element you want to delete on the grid.
-- You can generate the second required action related to the user story "adding multiple Xs to a Y" by hitting the generate list of of logic elements at the bottom of any Scenario Tab which will create a new window will all logic elements (except wires) that are in the scenario. These elements will be categorized by type and tell you where the element is located in the grid. Also you can run you scenario by hitting the Run button, then reset the scenario by hitting it again
-- You can locate my visual component by going to the Scene Tab and generating or selecting a new scenario, the grid
-up top of the selected Scenario Tab will be the where you add your logic elements to and where your circuit when it is off and on will display. You can hit the run button to run your circuit scenario based on what
-you place and it will light up above in the grid
-- You can save the state of my application by hitting the save button on the Home Tab
-- You can reload the state of my application by hitting the load button on the Home Tab
+**Creating and Editing Logic Circuits**
+To begin designing a logic circuit:
+
+  1. Navigate to the Scenes tab at the top of the interface.
+  2. Select an existing scenario from the list, or create a new one using the “New Scene” button on the left panel.
+  3. Choose a logic element (e.g., ANDGate, ORGate, Power) from the component menu. Once selected, the current element selection will update.
+  4. Click anywhere on the scenario grid to place the selected logic element.
+  5. To remove an element, click the Delete button, then select the element you want to remove from the grid.
+
+**Viewing Circuit Components**
+To inspect all components within a scenario:
+
+- Click the "Generate List of Logic Elements" button at the bottom of any Scenario tab.
+- A new window will appear showing all placed logic elements (excluding wires), grouped by type.
+- Each element entry includes its position on the grid for quick reference.
+
+**Running and Resetting Circuits**
+- To simulate a scenario, click the Run button in the Scenario tab.
+- Clicking Run again will reset the scenario to its original (pre-run) state.
+- During simulation, the circuit will activate visually within the grid area, reflecting logical outputs in real time.
+
+**Saving and Loading Application State**
+- To save your current session, including all created scenarios, click the Save button on the Home tab.
+- To load a previously saved session, click the Load button on the Home tab.
 
 # Planned Improvements to Architecture and Design
 
