@@ -11,22 +11,18 @@ This project was developed to deepen my understanding of digital systems and low
 
 ## User Stories
 
-List of **User Stories**:
-- As a user, I want to be able to create a scenario (blank world state) and add it to a list of scenarios.
-- As a user, I want to be able to create a scenario (blank world state), then add and draw any number of logical gates, outputs, sources, and wires to said scenario.
-- As a user, I want to be able to view a scenario from a list of scenarios I have created.
-- As a user, I want to be able to view a list of all logical gates and outputs added to a scenario.
-- As a user, I want to be able to draw wires to interconnect logic gates, sources, and outputs and run them in real-time to create a functioning logic circuit.
-- As a user, I want to be able to select the OR gate, NOR gate, AND gate, NAND gate, NOT gate, XOR gate, or XNOR gate from a menu and then have the menu tell me what the gate does.
-- As a user, I want to have a light source and an audio source that plays a frequency as outputs and I want to be able to select the colour or frequency at which the output emits.
+**User Interaction with Circuit Builder**:
+- As a user, I want to create and manage multiple circuit scenarios, each starting from a blank state.
+- As a user, I want to populate a scenario by adding and drawing logic gates, outputs, power sources, and wires to design a custom circuit.
+- As a user, I want to view and open any scenario from a centralized list of saved scenarios.
+- As a user, I want to see a complete list of all components (logic gates and outputs) added to a specific scenario.
+- As a user, I want to draw wires to interconnect components and simulate the circuit in real-time to verify functionality.
+- As a user, I want to select gates (OR, NOR, AND, NAND, NOT, XOR, XNOR) from a menu and view a brief description of each gate’s behavior.
+- As a user, I want to include visual (light) and audio (tone/frequency) outputs in my circuit, with options to customize their color and sound frequency.
 
-- *Old save and load user stories for Terminal*
-- As a user, I want the option to save the current application state with the list of all scenarios when the I quit the application
-- As a user, I want the option to load a previously saved application state that contains a list of scenarios when the I start the application
-
-- *Updated save and load user stories for GUI*
-- As a user, I want the option to save the current application state with the list of all scenarios from the home tab of the gui
-- As a user, I want the option to load a previously saved application state that contains a list of scenarios from the home tab of the gui
+**Persistence (Save/Load) Functionality**:
+- As a user, I want to save the current application state and all scenarios from the GUI home tab.
+- As a user, I want to load a previously saved application state, including scenarios, from the GUI home tab.
 
 
 # Instructions for End User
