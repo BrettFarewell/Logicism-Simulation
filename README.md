@@ -2,10 +2,11 @@
 
 ## Application Use & Purpose - Project Discription
 
-The *Logic Circuit Simulation* is an application where users can design and test their logic circuits. Thus, users will be able to place logic gates (e.g. OR Gate, AND Gate, NOT Gate, NOR Gate, etc.), outputs (e.g. light bulb, speaker, etc.), and a source (power), then interconnect them via drawable wires. *Logic Circuit Simulation* will serve as an educational tool, allowing individuals to learn more about logic circuits and the fundamentals that computers use for computations. users will be able to create a blank scenario in which they can draw out their desired logical circuits and then run them in real-time.
+Logic Circuit Simulator is an interactive application that allows users to design, build, and test custom digital circuits in a visual, real-time environment. Users can place logic gates (AND, OR, NOT, NOR, etc.), outputs (such as light bulbs or speakers), and power sources, then connect them using drawable wires to create functioning logic systems.
 
+The application provides a flexible workspace where users can create and simulate circuits from scratch, making it ideal for exploring the fundamentals of digital logic and circuit design. It serves as both a powerful prototyping tool and an accessible platform for understanding the basic principles behind modern computing systems.
 
-As mentioned, *Logic Circuit Simulation* is designed for individuals who want to experiment and educate themselves on the building blocks of digital circuits in a simulated hands-on environment. Additionally, the project interests me as I recently have been partaking in the  Maple Bacon club, a club dedicated to capture the flag (CTF) hacking competitions. Thus, I want to gain a better knowledge and understanding of computer architecture and logical circuits, to educate myself on computer hardware vulnerabilities.
+This project was developed to deepen my understanding of digital systems and low-level architecture, particularly as it relates to security and hardware. Inspired by my involvement in CTF competitions, this simulator is a step toward exploring how logical components interact and where vulnerabilities can arise within computer hardware.
 
 
 ## User Stories
